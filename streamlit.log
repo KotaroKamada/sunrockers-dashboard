@@ -1,0 +1,1574 @@
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8501
+  Network URL: http://192.168.48.158:8501
+
+/Users/kamadakotaro/Desktop/my_app/app.py:69: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  user_data["測定日"] = pd.to_datetime(
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:69: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  user_data["測定日"] = pd.to_datetime(
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:69: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  user_data["測定日"] = pd.to_datetime(
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:118: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/Desktop/my_app/app.py:141: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  plt.tight_layout()
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25968 (\N{CJK UNIFIED IDEOGRAPH-6570}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 20516 (\N{CJK UNIFIED IDEOGRAPH-5024}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:64: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:64: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:64: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:64: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:64: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:64: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:64: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/Desktop/my_app/app.py:113: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax1.tick_params(axis="x", colors="#FFD700", rotation=30)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12473 (\N{KATAKANA LETTER SU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12503 (\N{KATAKANA LETTER PU}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12522 (\N{KATAKANA LETTER RI}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12531 (\N{KATAKANA LETTER N}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12488 (\N{KATAKANA LETTER TO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/Desktop/my_app/app.py:136: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  ax.set_ylabel("数値", color="#FFD700", fontsize=12, labelpad=8)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 12398 (\N{HIRAGANA LETTER NO}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 25512 (\N{CJK UNIFIED IDEOGRAPH-63A8}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 31227 (\N{CJK UNIFIED IDEOGRAPH-79FB}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 28204 (\N{CJK UNIFIED IDEOGRAPH-6E2C}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 23450 (\N{CJK UNIFIED IDEOGRAPH-5B9A}) missing from current font.
+  fig.savefig(image, **kwargs)
+/Users/kamadakotaro/anaconda3/lib/python3.11/site-packages/streamlit/elements/pyplot.py:176: UserWarning: Glyph 26085 (\N{CJK UNIFIED IDEOGRAPH-65E5}) missing from current font.
+  fig.savefig(image, **kwargs)
