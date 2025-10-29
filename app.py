@@ -7,16 +7,16 @@ import io
 from datetime import datetime
 warnings.filterwarnings('ignore')
 
-# Google Sheets連携用ライブラリ
+# Google Sheets integration libraries
 try:
     import gspread
     from oauth2client.service_account import ServiceAccountCredentials
     GSPREAD_AVAILABLE = True
 except ImportError:
     GSPREAD_AVAILABLE = False
-    st.warning("Google Sheets連携ライブラリがインストールされていません。Excelファイルから読み込みます。")
+    st.warning("Google Sheets integration libraries are not installed. Loading from Excel file.")
 
-# Plotlyが利用可能かチェック
+# Check if Plotly is available
 try:
     import plotly.express as px
     import plotly.graph_objects as go
@@ -24,9 +24,9 @@ try:
     PLOTLY_AVAILABLE = True
 except ImportError:
     PLOTLY_AVAILABLE = False
-    st.warning("Plotlyライブラリが見つかりません。グラフ機能は無効になります。requirements.txtにplotlyを追加してください。")
+    st.warning("Plotly library not found. Graph features will be disabled. Please add plotly to requirements.txt.")
 
-# PDFライブラリの確認
+# Check PDF libraries
 try:
     from reportlab.lib.pagesizes import A4, landscape
     from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
@@ -40,18 +40,18 @@ try:
 except ImportError:
     PDF_AVAILABLE = False
 
-# ページ設定
+# Page configuration
 st.set_page_config(
-    page_title="SR SHIBUYA 測定データ",
+    page_title="SR SHIBUYA Measurement Data",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# カスタムCSS（レスポンシブ対応とモダンなデザイン）
+# Custom CSS (responsive design and modern styling)
 st.markdown("""
 <style>
-    /* レスポンシブ対応の基本設定 */
+    /* Basic responsive design settings */
     @media screen and (max-width: 768px) {
         .stApp > div {
             padding-left: 1rem !important;
@@ -84,13 +84,13 @@ st.markdown("""
     
     .main-header {
         background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
-        padding: 2.5rem;
+        padding: 1.2rem;
         border-radius: 0px;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         text-align: center;
         color: white;
         font-weight: 700;
-        font-size: 2.8rem;
+        font-size: 1.8rem;
         box-shadow: 0 8px 32px rgba(30, 41, 59, 0.25);
         border-left: 6px solid #0F172A;
     }
@@ -189,7 +189,7 @@ st.markdown("""
         font-weight: 400;
     }
     
-    /* データフレームのスタイル改善 */
+    /* Improved DataFrame styling */
     .stDataFrame {
         background: white;
         border-radius: 8px;
@@ -220,12 +220,12 @@ st.markdown("""
         background-color: #F8FAFC !important;
     }
     
-    /* サイドバーのスタイル改善 */
+    /* Improved sidebar styling */
     .css-1d391kg {
         background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%);
     }
     
-    /* サイドバーのマルチセレクトをグレー系に */
+    /* Sidebar multiselect in gray tones */
     [data-baseweb="select"] {
         background-color: #F8FAFC;
     }
@@ -244,7 +244,7 @@ st.markdown("""
         color: white !important;
     }
     
-    /* タイトルエリアの改善 */
+    /* Improved title area */
     .player-title {
         color: #1E293B;
         font-size: 2.2rem;
@@ -264,7 +264,7 @@ st.markdown("""
         border: 1px solid #C7D2FE;
     }
     
-    /* グラフセクションの改善 */
+    /* Improved graph section */
     .graph-section {
         background: white;
         border-radius: 12px;
@@ -283,7 +283,7 @@ st.markdown("""
         border-bottom: 2px solid #E5E7EB;
     }
     
-    /* レスポンシブグラフ対応 */
+    /* Responsive graph support */
     .js-plotly-plot {
         width: 100% !important;
     }
@@ -294,7 +294,7 @@ st.markdown("""
         }
     }
     
-    /* 概要テーブルのスタイル */
+    /* Summary table styling */
     .summary-table {
         background: white;
         border-radius: 8px;
@@ -302,7 +302,7 @@ st.markdown("""
         margin: 1.5rem 0;
     }
     
-    /* レーダーチャート用スタイル */
+    /* Radar chart styling */
     .radar-chart-container {
         background: transparent;
         border-radius: 0px;
@@ -321,11 +321,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# 統一されたカラーパレット
+# Unified color palette
 CHART_COLOR = '#4B5563'  # Gray 600
 CHART_COLORS = [CHART_COLOR] * 6
 
-# チーム分析用のカラーパレット
+# Color palette for team analysis
 TEAM_COLORS = [
     '#4B5563',  # Gray 600
     '#EF4444',  # Red 500
@@ -339,40 +339,40 @@ TEAM_COLORS = [
     '#6366F1'   # Indigo 500
 ]
 
-# 名前入力による簡単なアクセス制御
+# Simple access control by name input
 def validate_player_name(df, input_name):
-    """入力された名前が存在するかチェック"""
+    """Check if the entered name exists"""
     if not input_name or input_name.strip() == "":
-        return False, "名前を入力してください"
+        return False, "Please enter a name"
     
-    available_names = df[df['名前'] != '目標値']['名前'].dropna().unique()
+    available_names = df[df['名前'] != 'Target']['名前'].dropna().unique()
     
     if input_name in available_names:
-        return True, "認証成功"
+        return True, "Authentication successful"
     
     for name in available_names:
         if input_name in str(name) or str(name) in input_name:
-            return True, f"'{name}' として認識しました"
+            return True, f"Recognized as '{name}'"
     
-    return False, f"選手名 '{input_name}' が見つかりません"
+    return False, f"Player name '{input_name}' not found"
 
-@st.cache_data(ttl=300)  # 5分間キャッシュ（データ更新を反映）
+@st.cache_data(ttl=300)  # Cache for 5 minutes (to reflect data updates)
 def load_data():
-    """Googleスプレッドシートまたはエクセルファイルを読み込む関数"""
+    """Function to load data from Google Spreadsheet or Excel file"""
     
-    # まずGoogleスプレッドシートから読み込みを試行
+    # First, try loading from Google Spreadsheet
     if GSPREAD_AVAILABLE:
         try:
-            # 認証情報の取得
+            # Get credentials
             scope = [
                 'https://spreadsheets.google.com/feeds',
                 'https://www.googleapis.com/auth/drive'
             ]
             
-            # Streamlit Secretsが利用可能かチェック（Streamlit Cloud環境）
+            # Check if Streamlit Secrets is available (Streamlit Cloud environment)
             try:
                 if 'gcp_service_account' in st.secrets:
-                    # Streamlit Cloud環境：secretsから読み込み
+                    # Streamlit Cloud environment: load from secrets
                     credentials_dict = dict(st.secrets["gcp_service_account"])
                     credentials = ServiceAccountCredentials.from_json_keyfile_dict(
                         credentials_dict, 
@@ -382,13 +382,13 @@ def load_data():
                 else:
                     raise KeyError("Secrets not configured")
             except (KeyError, FileNotFoundError):
-                # ローカル環境：credentials.jsonから読み込み
+                # Local environment: load from credentials.json
                 import os
                 
-                # credentials.jsonのパスを指定
+                # Specify path to credentials.json
                 credentials_path = 'credentials.json'
                 
-                # 見つからない場合は絶対パスを試す
+                # If not found, try absolute path
                 if not os.path.exists(credentials_path):
                     current_dir = os.path.dirname(os.path.abspath(__file__))
                     credentials_path = os.path.join(current_dir, 'credentials.json')
@@ -398,49 +398,49 @@ def load_data():
                     scope
                 )
                 
-                # スプレッドシートIDを設定
+                # Set spreadsheet ID
                 SPREADSHEET_ID = "1haqC1GhKMj5KJvIUyAvTwpr9CKQtMa7hr6qGcGagSrc"
             
-            if not SPREADSHEET_ID or SPREADSHEET_ID == "あなたのスプレッドシートID":
-                raise ValueError("スプレッドシートIDが設定されていません")
+            if not SPREADSHEET_ID or SPREADSHEET_ID == "your_spreadsheet_id":
+                raise ValueError("Spreadsheet ID not set")
             
-            # スプレッドシートに接続
+            # Connect to spreadsheet
             gc = gspread.authorize(credentials)
             worksheet = gc.open_by_key(SPREADSHEET_ID).sheet1
             
-            # データを取得してDataFrameに変換
+            # Get data and convert to DataFrame
             data = worksheet.get_all_values()
             
             if not data or len(data) < 2:
-                raise ValueError("スプレッドシートにデータがありません")
+                raise ValueError("No data in spreadsheet")
             
-            # ヘッダーとデータを分離
+            # Separate headers and data
             headers = data[0]
             rows = data[1:]
             
-            # DataFrameを作成
+            # Create DataFrame
             df = pd.DataFrame(rows, columns=headers)
             
         except Exception as e:
-            st.warning(f"⚠️ Googleスプレッドシート読み込みエラー: {str(e)}")
-            st.info("Excelファイルからの読み込みにフォールバックします...")
+            st.warning(f"⚠️ Google Spreadsheet loading error: {str(e)}")
+            st.info("Falling back to loading from Excel file...")
             df = load_from_excel()
             
     else:
-        # gspreadが利用できない場合はExcelから読み込み
+        # If gspread is not available, load from Excel
         df = load_from_excel()
     
     if df.empty:
         return df
     
-    # データ型の変換
+    # Data type conversion
     df.columns = df.columns.astype(str)
     
     for col in df.columns:
         if col not in ['名前', 'カテゴリー', '測定日']:
             df[col] = pd.to_numeric(df[col], errors='coerce')
     
-    # BMI計算
+    # BMI calculation
     if all(col in df.columns for col in ['Height', 'Weight']):
         if 'BMI' not in df.columns:
             df['BMI'] = np.nan
@@ -454,12 +454,12 @@ def load_data():
             df.loc[recalc_mask, 'BMI'] = (df.loc[recalc_mask, 'Weight'] / 
                                          ((df.loc[recalc_mask, 'Height'] / 100) ** 2))
     
-    # BW*20m Mulch計算
+    # BW*20m Mulch calculation
     if all(col in df.columns for col in ['Weight', '20m Mulch']):
         mask = pd.isna(df['BW*20m Mulch']) & pd.notna(df['Weight']) & pd.notna(df['20m Mulch'])
         df.loc[mask, 'BW*20m Mulch'] = df.loc[mask, 'Weight'] * df.loc[mask, '20m Mulch']
     
-    # 測定日の処理
+    # Process measurement date
     if '測定日' in df.columns:
         df['測定日'] = pd.to_datetime(df['測定日'], errors='coerce')
         df['測定日'] = df['測定日'].dt.strftime('%Y-%m-%d')
@@ -467,17 +467,17 @@ def load_data():
     return df
 
 def load_from_excel():
-    """Excelファイルから読み込むフォールバック関数"""
+    """Fallback function to load from Excel file"""
     try:
         df = pd.read_excel('SR_physicaldata.xlsx', sheet_name=0)
         return df
     except Exception as e:
-        st.error(f"❌ Excelファイル読み込みエラー: {str(e)}")
-        st.error("SR_physicaldata.xlsxファイルが存在することを確認してください。")
+        st.error(f"❌ Excel file loading error: {str(e)}")
+        st.error("Please confirm that the SR_physicaldata.xlsx file exists.")
         return pd.DataFrame()
 
 def get_category_config(category):
-    """カテゴリー別の設定を取得"""
+    """Get configuration by category"""
     config = {
         'U18': {
             'highlight': {
@@ -492,7 +492,7 @@ def get_category_config(category):
                 },
                 'Quickness': {
                     'metrics': ['20m Sprint(s)', 'Pro Agility', 'CODD', 'Sprint Momentum'],
-                    'units': {'20m Sprint(s)': '秒', 'Pro Agility': '秒', 'CODD': '秒', 'Sprint Momentum': ''}
+                    'units': {'20m Sprint(s)': 'sec', 'Pro Agility': 'sec', 'CODD': 'sec', 'Sprint Momentum': ''}
                 },
                 'Jump': {
                     'metrics': ['CMJ', 'BJ', 'RJ'],
@@ -500,7 +500,7 @@ def get_category_config(category):
                 },
                 'Endurance': {
                     'metrics': ['20m Mulch', 'BW*20m Mulch'],
-                    'units': {'20m Mulch': '回', 'BW*20m Mulch': ''}
+                    'units': {'20m Mulch': 'reps', 'BW*20m Mulch': ''}
                 },
                 'Strength': {
                     'metrics': ['BSQ', 'BP', 'BSQ/BW', 'BP/BW'],
@@ -522,7 +522,7 @@ def get_category_config(category):
                 },
                 'Quickness': {
                     'metrics': ['20m Sprint(s)', 'Pro Agility', 'CODD', 'Sprint Momentum'],
-                    'units': {'20m Sprint(s)': '秒', 'Pro Agility': '秒', 'CODD': '秒', 'Sprint Momentum': ''}
+                    'units': {'20m Sprint(s)': 'sec', 'Pro Agility': 'sec', 'CODD': 'sec', 'Sprint Momentum': ''}
                 },
                 'Jump': {
                     'metrics': ['CMJ', 'BJ', 'RJ'],
@@ -530,14 +530,14 @@ def get_category_config(category):
                 },
                 'Endurance': {
                     'metrics': ['20m Mulch', 'BW*20m Mulch'],
-                    'units': {'20m Mulch': '回', 'BW*20m Mulch': ''}
+                    'units': {'20m Mulch': 'reps', 'BW*20m Mulch': ''}
                 }
             }
         },
         'U12': {
             'highlight': {
                 'Weight': 'kg',
-                '20m Sprint(s)': '秒',
+                '20m Sprint(s)': 'sec',
                 'CMJ': 'cm'
             },
             'sections': {
@@ -546,8 +546,8 @@ def get_category_config(category):
                     'units': {'Height': 'cm', 'Weight': 'kg', 'BMI': '', 'Maturity': 'year', 'LBM/m': ''}
                 },
                 'Quickness': {
-                    'metrics': ['20m Sprint(s)', 'Pro Agility', 'CODD', 'Side Hop(右)', 'Side Hop(左)', 'Sprint Momentum'],
-                    'units': {'20m Sprint(s)': '秒', 'Pro Agility': '秒', 'CODD': '秒', 'Side Hop(右)': '回', 'Side Hop(左)': '回', 'Sprint Momentum': ''}
+                    'metrics': ['20m Sprint(s)', 'Pro Agility', 'CODD', 'Side Hop(R)', 'Side Hop(L)', 'Sprint Momentum'],
+                    'units': {'20m Sprint(s)': 'sec', 'Pro Agility': 'sec', 'CODD': 'sec', 'Side Hop(R)': 'reps', 'Side Hop(L)': 'reps', 'Sprint Momentum': ''}
                 },
                 'Jump': {
                     'metrics': ['CMJ', 'BJ', 'RJ'],
@@ -555,7 +555,7 @@ def get_category_config(category):
                 },
                 'Endurance': {
                     'metrics': ['20m Mulch', 'BW*20m Mulch'],
-                    'units': {'20m Mulch': '回', 'BW*20m Mulch': ''}
+                    'units': {'20m Mulch': 'reps', 'BW*20m Mulch': ''}
                 }
             }
         }
@@ -563,10 +563,10 @@ def get_category_config(category):
     return config.get(category, config['U18'])
 
 def safe_get_value(data, column, default=None):
-    """安全に値を取得する関数（項目ごとの最新のデータを遡って取得）- Sprint MomentumとBW*20m Mulchの計算を含む"""
+    """Function to safely get values (retrieve latest data retroactively for each item) - includes Sprint Momentum and BW*20m Mulch calculations"""
     try:
         if column not in data.columns or data.empty:
-            # Sprint MomentumやBW*20m Mulchの計算を試行
+            # Try calculating Sprint Momentum or BW*20m Mulch
             if column == 'Sprint Momentum' and all(col in data.columns for col in ['Weight', '20m Sprint(s)']):
                 weight_val = safe_get_value(data, 'Weight', default)
                 sprint_val = safe_get_value(data, '20m Sprint(s)', default)
@@ -579,11 +579,11 @@ def safe_get_value(data, column, default=None):
                     return float(weight_val) * float(mulch_val)
             return default
         
-        # その項目で有効な値があるデータのみフィルター
+        # Filter only data with valid values for that item
         valid_data = data[data[column].notna() & (data[column] != '') & (data[column] != 'null')]
         
         if valid_data.empty:
-            # Sprint MomentumやBW*20m Mulchの計算を試行
+            # Try calculating Sprint Momentum or BW*20m Mulch
             if column == 'Sprint Momentum' and all(col in data.columns for col in ['Weight', '20m Sprint(s)']):
                 weight_val = safe_get_value(data, 'Weight', default)
                 sprint_val = safe_get_value(data, '20m Sprint(s)', default)
@@ -596,9 +596,9 @@ def safe_get_value(data, column, default=None):
                     return float(weight_val) * float(mulch_val)
             return default
         
-        # 測定日がある場合は、その項目の最新のデータを取得
+        # If there's a measurement date, get the latest data for that item
         if '測定日' in valid_data.columns:
-            # 測定日でソートして最新のデータを取得
+            # Sort by measurement date and get the latest data
             latest_valid = valid_data.sort_values('測定日', ascending=False).iloc[0]
             value = latest_valid[column]
         else:
@@ -607,42 +607,42 @@ def safe_get_value(data, column, default=None):
         if pd.isna(value):
             return default
         
-        # 数値型の場合
+        # For numeric types
         if isinstance(value, (int, float, np.number)):
             if np.isfinite(value):
                 return float(value)
         
-        # 文字列の場合の処理
+        # Processing for strings
         if isinstance(value, str):
             try:
                 if column == 'Fat%':
-                    # Fat%の場合は%記号を取り除いて数値変換
+                    # For Fat%, remove % sign and convert to numeric
                     clean_value = value.strip().replace('%', '')
                     num_val = float(clean_value)
                     if np.isfinite(num_val):
                         return num_val
                 else:
-                    # その他の場合は直接数値変換
+                    # For others, convert directly to numeric
                     num_val = float(value.strip())
                     if np.isfinite(num_val):
                         return num_val
             except (ValueError, TypeError):
-                # 数値変換できない場合はそのまま返す（文字列データの場合）
+                # If numeric conversion fails, return as is (for string data)
                 return str(value)
         
-        # 上記のいずれにも該当しない場合はそのまま返す
+        # If none of the above apply, return as is
         return value
         
     except Exception as e:
         return default
 
 def safe_get_previous_value(data, column, default=None):
-    """前回の測定値を安全に取得する関数（項目ごとの前回データを取得）"""
+    """Function to safely get previous measurement value (get previous data for each item)"""
     try:
         if column not in data.columns or data.empty:
             return default
         
-        # その項目で有効な値があるデータのみフィルター
+        # Filter only data with valid values for that item
         valid_data = data[data[column].notna() & (data[column] != '') & (data[column] != 'null')]
         
         if len(valid_data) < 2:
@@ -650,7 +650,7 @@ def safe_get_previous_value(data, column, default=None):
         
         if '測定日' in valid_data.columns:
             sorted_data = valid_data.sort_values('測定日', ascending=False)
-            # 2番目に新しいデータを取得（その項目での前回値）
+            # Get second newest data (previous value for that item)
             previous_value = sorted_data.iloc[1][column]
         else:
             previous_value = valid_data.iloc[1][column]
@@ -658,12 +658,12 @@ def safe_get_previous_value(data, column, default=None):
         if pd.isna(previous_value):
             return default
         
-        # 数値型の場合
+        # For numeric types
         if isinstance(previous_value, (int, float, np.number)):
             if np.isfinite(previous_value):
                 return float(previous_value)
         
-        # 文字列の場合の処理
+        # Processing for strings
         if isinstance(previous_value, str):
             try:
                 if column == 'Fat%':
@@ -684,15 +684,15 @@ def safe_get_previous_value(data, column, default=None):
         return default
 
 def safe_get_latest_and_previous_for_player(df, player_name, id_group, metric):
-    """特定の選手の特定の項目の最新値と前回値を取得（ID別グルーピング対応版）"""
+    """Get latest and previous values for a specific item for a specific player (ID grouping supported version)"""
     try:
-        # 該当選手の全データを取得（IDグループでフィルタ）
+        # Get all data for the player (filtered by ID group)
         player_all_data = df[(df['名前'] == player_name) & (df['ID'] == id_group)]
         
         if player_all_data.empty or metric not in player_all_data.columns:
             return None, None, "-", "-"
         
-        # その項目で有効な値があるデータのみフィルター
+        # Filter only data with valid values for that item
         valid_data = player_all_data[
             player_all_data[metric].notna() & 
             (player_all_data[metric] != '') & 
@@ -702,12 +702,12 @@ def safe_get_latest_and_previous_for_player(df, player_name, id_group, metric):
         if valid_data.empty:
             return None, None, "-", "-"
         
-        # 測定日でソート
+        # Sort by measurement date
         if '測定日' in valid_data.columns:
             valid_data['測定日'] = pd.to_datetime(valid_data['測定日'], errors='coerce')
             valid_data = valid_data.dropna(subset=['測定日']).sort_values('測定日', ascending=False)
         
-        # 最新値と測定日を取得
+        # Get latest value and measurement date
         latest_val = None
         latest_date = "-"
         if len(valid_data) > 0:
@@ -716,7 +716,7 @@ def safe_get_latest_and_previous_for_player(df, player_name, id_group, metric):
             if '測定日' in latest_row and pd.notna(latest_row['測定日']):
                 latest_date = latest_row['測定日'].strftime('%Y-%m-%d')
         
-        # 前回値と測定日を取得
+        # Get previous value and measurement date
         previous_val = None
         previous_date = "-"
         if len(valid_data) > 1:
@@ -731,7 +731,7 @@ def safe_get_latest_and_previous_for_player(df, player_name, id_group, metric):
         return None, None, "-", "-"
 
 def safe_mean(series):
-    """安全に平均値を計算"""
+    """Safely calculate mean value"""
     if series.empty:
         return None
     
@@ -753,18 +753,18 @@ def safe_mean(series):
     return np.mean(numeric_values) if len(numeric_values) > 0 else None
 
 def calculate_z_score(player_val, comparison_data, column):
-    """選手の値を比較データ平均を基準としたZスコアで評価（5段階評価）
+    """Evaluate player's value with Z-score based on comparison data mean (5-level evaluation)
     
     Args:
-        player_val: 選手の値
-        comparison_data: 比較対象データ（個人分析ではカテゴリーデータ、比較分析ではIDグループデータ）
-        column: 評価する項目名
+        player_val: Player's value
+        comparison_data: Comparison target data (category data for individual analysis, ID group data for comparison analysis)
+        column: Item name to evaluate
     """
     try:
         if player_val is None or comparison_data.empty or column not in comparison_data.columns:
-            return 3  # デフォルト値
+            return 3  # Default value
         
-        # 比較データの有効値を取得
+        # Get valid values from comparison data
         valid_values = []
         for _, row in comparison_data.iterrows():
             val = safe_get_value(pd.DataFrame([row]), column)
@@ -772,7 +772,7 @@ def calculate_z_score(player_val, comparison_data, column):
                 valid_values.append(val)
         
         if len(valid_values) < 2:
-            return 3  # データ不足の場合は中央値
+            return 3  # Return median if insufficient data
         
         group_mean = np.mean(valid_values)
         group_std = np.std(valid_values, ddof=1)
@@ -782,11 +782,11 @@ def calculate_z_score(player_val, comparison_data, column):
         
         z_score = (player_val - group_mean) / group_std
         
-        # Sprint、Agility、CODDは低い方が良いので評価を逆転
+        # Reverse evaluation for Sprint, Agility, CODD as lower is better
         reverse_score_metrics = ['20m Sprint(s)', 'Pro Agility', 'CODD']
         
         if column in reverse_score_metrics:
-            # 低い方が良い項目：+1.5SD以上で1、+1.5~0.5SDで2、+0.5SD~-0.5SDで3、-0.5~-1.5SDで4、-1.5SD以下で5
+            # Items where lower is better: 1 if +1.5SD or more, 2 if +1.5~0.5SD, 3 if +0.5SD~-0.5SD, 4 if -0.5~-1.5SD, 5 if -1.5SD or less
             if z_score >= 1.5:
                 return 1
             elif z_score >= 0.5:
@@ -798,7 +798,7 @@ def calculate_z_score(player_val, comparison_data, column):
             else:
                 return 5
         else:
-            # 高い方が良い項目：従来通り
+            # Items where higher is better: conventional method
             if z_score <= -1.5:
                 return 1
             elif z_score <= -0.5:
@@ -814,15 +814,15 @@ def calculate_z_score(player_val, comparison_data, column):
         return 3
 
 def create_radar_chart(player_data, comparison_data, config):
-    """Key Indicators用のレーダーチャートを作成（Sprint Momentum、BW*20m Mulch、LBM/mの3つを使用）"""
+    """Create radar chart for Key Indicators (using Sprint Momentum, BW*20m Mulch, LBM/m)"""
     if not PLOTLY_AVAILABLE:
         return None
     
     try:
-        # 3つの指標を固定で使用
+        # Fixed use of 3 indicators
         radar_metrics = ['Sprint Momentum', 'BW*20m Mulch', 'LBM/m']
         
-        # 各メトリクスの値とZスコアを計算
+        # Calculate values and Z-scores for each metric
         radar_data = {
             'metrics': [],
             'values': [],
@@ -838,32 +838,32 @@ def create_radar_chart(player_data, comparison_data, config):
                 radar_data['values'].append(player_val)
                 radar_data['z_scores'].append(z_score)
         
-        # データが不足している場合
+        # If data is insufficient
         if len(radar_data['metrics']) < 2:
             return None
         
-        # レーダーチャートの作成
+        # Create radar chart
         fig = go.Figure()
         
-        # プレイヤーのデータ
+        # Player's data
         fig.add_trace(go.Scatterpolar(
             r=radar_data['z_scores'],
             theta=radar_data['metrics'],
             fill='toself',
-            name='現在のレベル',
+            name='Current Level',
             line=dict(color='#4B5563', width=3),
             fillcolor='rgba(75, 85, 99, 0.3)',
             marker=dict(size=8, color='#4B5563')
         ))
         
-        # レイアウト設定
+        # Layout settings
         fig.update_layout(
             polar=dict(
                 radialaxis=dict(
                     visible=True,
                     range=[0, 5],
                     tickvals=[1, 2, 3, 4, 5],
-                    ticktext=['1 (要改善)', '2 (やや劣る)', '3 (平均的)', '4 (良好)', '5 (優秀)'],
+                    ticktext=['1 (Needs Improvement)', '2 (Below Average)', '3 (Average)', '4 (Good)', '5 (Excellent)'],
                     tickfont=dict(size=10),
                     gridcolor='rgba(0,0,0,0.1)'
                 ),
@@ -886,7 +886,7 @@ def create_radar_chart(player_data, comparison_data, config):
         return None
 
 def format_value(value, unit="", column_name=""):
-    """値を安全にフォーマット（Fat%は×100して%表記、N/Aは空欄）"""
+    """Safely format value (multiply Fat% by 100 and display as %, N/A as blank)"""
     if value is None or pd.isna(value):
         return ""
     try:
@@ -901,12 +901,12 @@ def format_value(value, unit="", column_name=""):
         return ""
 
 def get_measurement_date(data, column):
-    """特定の項目の測定日を取得"""
+    """Get measurement date for specific item"""
     try:
         if column not in data.columns or data.empty:
             return "-"
         
-        # まず基本的なフィルタリング
+        # First basic filtering
         valid_data = data[data[column].notna() & (data[column] != '') & (data[column] != 'null')]
         
         if valid_data.empty:
@@ -922,14 +922,14 @@ def get_measurement_date(data, column):
         return "-"
 
 def create_comprehensive_summary_table(player_data, category_avg, goal_data, config):
-    """全項目を含む包括的な概要テーブルを作成"""
+    """Create comprehensive summary table including all items"""
     table_data = []
     
     all_metrics = []
     for section_data in config['sections'].values():
         all_metrics.extend(section_data['metrics'])
     
-    # 重複を除去しつつ順序を保持
+    # Remove duplicates while preserving order
     seen = set()
     unique_metrics = []
     for metric in all_metrics:
@@ -938,56 +938,56 @@ def create_comprehensive_summary_table(player_data, category_avg, goal_data, con
             unique_metrics.append(metric)
     
     for metric in unique_metrics:
-        # 最新値と前回値を取得
+        # Get latest and previous values
         current_val = safe_get_value(player_data, metric)
         previous_val = safe_get_previous_value(player_data, metric)
         avg_val = safe_mean(category_avg[metric]) if metric in category_avg.columns else None
         goal_val = safe_get_value(goal_data, metric) if not goal_data.empty else None
         
-        # 変化を計算（色付き、Fat%は×100して表示）
+        # Calculate change (colored, Fat% displayed as ×100)
         change = ""
         if current_val is not None and previous_val is not None:
             diff = current_val - previous_val
             if metric == 'Fat%':
-                # Fat%の場合は×100して表示
+                # For Fat%, display as ×100
                 if diff > 0:
-                    change = f'<span style="color: #DC2626;">↑ +{diff * 100:.1f}%</span>'  # 赤色
+                    change = f'<span style="color: #DC2626;">↑ +{diff * 100:.1f}%</span>'  # Red
                 elif diff < 0:
-                    change = f'<span style="color: #2563EB;">↓ {diff * 100:.1f}%</span>'   # 青色
+                    change = f'<span style="color: #2563EB;">↓ {diff * 100:.1f}%</span>'   # Blue
                 else:
                     change = "→ 0.0%"
             else:
-                # その他の項目は通常の差分表示
+                # For other items, display normal difference
                 if diff > 0:
-                    change = f'<span style="color: #DC2626;">↑ +{diff:.1f}</span>'  # 赤色
+                    change = f'<span style="color: #DC2626;">↑ +{diff:.1f}</span>'  # Red
                 elif diff < 0:
-                    change = f'<span style="color: #2563EB;">↓ {diff:.1f}</span>'   # 青色
+                    change = f'<span style="color: #2563EB;">↓ {diff:.1f}</span>'   # Blue
                 else:
                     change = "→ 0.0"
         
-        # 測定日を取得
+        # Get measurement date
         measurement_date = get_measurement_date(player_data, metric)
         
-        # 目標値との比較で色付け
+        # Color by comparison with target value
         latest_val_display = format_value(current_val, "", metric)
         
         table_data.append({
-            '項目': metric,
-            '最新測定値': latest_val_display,
-            '前回測定値': format_value(previous_val, "", metric),
-            '変化': change,
-            'カテゴリー平均': format_value(avg_val, "", metric),
-            '目標値': format_value(goal_val, "", metric) if goal_val is not None else "",
-            '最新測定日': measurement_date
+            'Item': metric,
+            'Latest Value': latest_val_display,
+            'Previous Value': format_value(previous_val, "", metric),
+            'Change': change,
+            'Category Average': format_value(avg_val, "", metric),
+            'Target Value': format_value(goal_val, "", metric) if goal_val is not None else "",
+            'Latest Measurement Date': measurement_date
         })
     
     return pd.DataFrame(table_data)
 
 def show_team_analysis(df):
-    """比較分析画面を表示（ID別グルーピング版 + 選手個別選択機能付き）"""
-    st.markdown('<div class="main-header">SR SHIBUYA 比較分析</div>', unsafe_allow_html=True)
+    """Display comparison analysis screen (ID grouping version)"""
+    st.markdown('<div class="main-header">SR SHIBUYA Comparative Analysis</div>', unsafe_allow_html=True)
     
-    # データの前処理：BMIの再計算
+    # Data preprocessing: BMI recalculation
     if all(col in df.columns for col in ['Height', 'Weight', 'BMI']):
         mask = (pd.notna(df['Height']) & pd.notna(df['Weight']) & 
                (df['Height'] > 0) & (df['Weight'] > 0) & 
@@ -997,172 +997,109 @@ def show_team_analysis(df):
             df.loc[mask, 'BMI'] = (df.loc[mask, 'Weight'] / 
                                   ((df.loc[mask, 'Height'] / 100) ** 2))
     
-    # サイドバーでの設定
-    st.sidebar.header("分析設定")
+    # Get available ID groups
+    available_ids = sorted(df['ID'].dropna().unique())
     
-    # 比較モード選択
-    st.sidebar.subheader("比較方法")
-    comparison_mode = st.sidebar.radio(
-        "比較する選手の選択方法を選んでください",
-        ["IDグループで分類", "選手を個別に選択"],
-        help="IDグループ: 分析対象IDグループで選手を分類して比較\n個別選択: IDの枠を超えて任意の選手を選択して比較"
+    # Settings in sidebar
+    st.sidebar.header("Analysis Settings")
+    
+    # ID group selection
+    selected_id = st.sidebar.selectbox(
+        "Target ID Group for Analysis",
+        available_ids,
+        help="Select the ID group of players to compare"
     )
     
-    st.sidebar.markdown("---")
+    # Filter only players in the ID group (enhanced duplicate removal processing)
+    id_group_data = df[(df['ID'] == selected_id) & (df['名前'] != 'Target')].copy()
     
-    # 選択された選手リストとIDグループ
-    selected_players = []
-    selected_id = None
+    # Duplicate handling for same-name players: keep only data with latest measurement date
+    if '測定日' in id_group_data.columns and not id_group_data.empty:
+        # Ensure measurement date is converted to datetime type
+        id_group_data['測定日'] = pd.to_datetime(id_group_data['測定日'], errors='coerce')
+        
+        # Remove rows with NaN values, then remove duplicates
+        id_group_data_clean = id_group_data.dropna(subset=['名前', '測定日'])
+        
+        # Get only latest data for each player (more rigorous processing)
+        latest_data = (id_group_data_clean
+                      .sort_values(['名前', '測定日'], ascending=[True, False])
+                      .groupby('名前', as_index=False)
+                      .first())
+        
+        # Use deduplicated data
+        id_group_data = latest_data
+        id_group_players = sorted(latest_data['名前'].unique())
+        
+    else:
+        # Improved processing when measurement date is not available
+        id_group_players = sorted(list(set(id_group_data['名前'].dropna().tolist())))
+        # Update id_group_data to deduplicated version in this case too
+        unique_names = id_group_data['名前'].dropna().drop_duplicates()
+        id_group_data = id_group_data[id_group_data['名前'].isin(unique_names)]
     
-    if comparison_mode == "IDグループで分類":
-        # 既存のIDグループ選択機能
-        # 利用可能なIDグループを取得
-        available_ids = sorted(df['ID'].dropna().unique())
-        
-        # IDグループ選択
-        selected_id = st.sidebar.selectbox(
-            "分析対象IDグループ",
-            available_ids,
-            help="比較する選手のIDグループを選択"
-        )
-        
-        # 該当IDグループの選手のみフィルタ（重複排除処理を強化）
-        id_group_data = df[(df['ID'] == selected_id) & (df['名前'] != '目標値')].copy()
-        
-        # 同名選手の重複処理：最新の測定日のデータのみを保持
-        if '測定日' in id_group_data.columns and not id_group_data.empty:
-            # 測定日を確実にdatetime型に変換
-            id_group_data['測定日'] = pd.to_datetime(id_group_data['測定日'], errors='coerce')
-            
-            # NaN値を持つ行を除外してから重複排除
-            id_group_data_clean = id_group_data.dropna(subset=['名前', '測定日'])
-            
-            # 各選手の最新データのみを取得（より厳密な処理）
-            latest_data = (id_group_data_clean
-                          .sort_values(['名前', '測定日'], ascending=[True, False])
-                          .groupby('名前', as_index=False)
-                          .first())
-            
-            # 重複排除済みのデータを使用
-            id_group_data = latest_data
-            id_group_players = sorted(latest_data['名前'].unique())
-            
-        else:
-            # 測定日がない場合の処理も改善
-            id_group_players = sorted(list(set(id_group_data['名前'].dropna().tolist())))
-            # この場合もid_group_dataを重複排除済みに更新
-            unique_names = id_group_data['名前'].dropna().drop_duplicates()
-            id_group_data = id_group_data[id_group_data['名前'].isin(unique_names)]
-        
-        # 選手選択（デフォルトで全選手選択）
-        selected_players = st.sidebar.multiselect(
-            f"比較する選手（最大50名まで対応）",
-            id_group_players,
-            default=id_group_players,  # 全選手をデフォルト選択
-            help="比較したい選手を選択してください。多数の選手を同時に比較できます。"
-        )
-        
-        # 利用可能なメトリクスを取得
-        all_metrics = ['Height', 'Weight', 'BMI', 'Fat%', 'LBM/m', '20m Sprint(s)', 
-                       'Pro Agility', 'CODD', 'Sprint Momentum', 'CMJ', 'BJ', 'RJ', 
-                       '20m Mulch', 'BW*20m Mulch', 'BSQ', 'BP']
-        
-        available_metrics = []
-        for metric in all_metrics:
-            if metric in df.columns:
-                if not id_group_data[metric].isna().all():
-                    available_metrics.append(metric)
+    # Player selection (all players selected by default)
+    selected_players = st.sidebar.multiselect(
+        f"Players to Compare (up to 50 players supported)",
+        id_group_players,
+        default=id_group_players,  # All players selected by default
+        help="Select the players you want to compare. You can compare multiple players simultaneously."
+    )
     
-    else:  # 選手を個別に選択
-        st.sidebar.subheader("比較する選手を選択")
-        
-        # 全選手リストを取得（目標値を除く）
-        all_players = sorted(df[df['名前'] != '目標値']['名前'].dropna().unique())
-        
-        # 選手を個別に選択
-        selected_players = st.sidebar.multiselect(
-            "選手を選択（最大50名まで）",
-            all_players,
-            default=all_players[:5] if len(all_players) >= 5 else all_players,
-            help="IDの枠を超えて、比較したい選手を自由に選択できます"
-        )
-        
-        # 選択された選手の所属IDグループを表示
-        if selected_players:
-            st.sidebar.markdown("**選択された選手の所属:**")
-            player_ids = {}
-            for player in selected_players:
-                player_id = df[df['名前'] == player]['ID'].iloc[0]
-                if player_id in player_ids:
-                    player_ids[player_id].append(player)
-                else:
-                    player_ids[player_id] = [player]
-            
-            for pid, players in player_ids.items():
-                st.sidebar.text(f"ID {pid}: {', '.join(players)}")
-        
-        # 利用可能なメトリクスを取得（全選手のデータから）
-        all_metrics = ['Height', 'Weight', 'BMI', 'Fat%', 'LBM/m', '20m Sprint(s)', 
-                       'Pro Agility', 'CODD', 'Sprint Momentum', 'CMJ', 'BJ', 'RJ', 
-                       '20m Mulch', 'BW*20m Mulch', 'BSQ', 'BP']
-        
-        available_metrics = []
-        for metric in all_metrics:
-            if metric in df.columns:
-                # 選択された選手の中で、少なくとも1人がこのメトリクスのデータを持っている場合に追加
-                player_data = df[df['名前'].isin(selected_players)]
-                if not player_data[metric].isna().all():
-                    available_metrics.append(metric)
+    # Get available metrics
+    all_metrics = ['Height', 'Weight', 'BMI', 'Fat%', 'LBM/m', '20m Sprint(s)', 
+                   'Pro Agility', 'CODD', 'Sprint Momentum', 'CMJ', 'BJ', 'RJ', 
+                   '20m Mulch', 'BW*20m Mulch', 'BSQ', 'BP']
     
-    st.sidebar.markdown("---")
+    available_metrics = []
+    for metric in all_metrics:
+        if metric in df.columns:
+            if not id_group_data[metric].isna().all():
+                available_metrics.append(metric)
     
-    # メトリクス選択（両方のモードで共通）
+    # Metric selection
     selected_metrics = st.sidebar.multiselect(
-        "分析する項目",
+        "Items to Analyze",
         available_metrics,
         default=available_metrics[:6] if len(available_metrics) >= 6 else available_metrics,
-        help="比較したい測定項目を選択"
+        help="Select measurement items to compare"
     )
     
     if not selected_players:
-        st.warning("比較する選手を選択してください。")
+        st.warning("Please select players to compare.")
         return
     
     if not selected_metrics:
-        st.warning("分析する項目を選択してください。")
+        st.warning("Please select items to analyze.")
         return
     
-    # 詳細グラフセクション
-    st.markdown('<div class="section-header">詳細分析グラフ</div>', unsafe_allow_html=True)
+    # Detailed graph section
+    st.markdown('<div class="section-header">Detailed Analysis Graphs</div>', unsafe_allow_html=True)
     
-    # 選択された項目ごとにグラフを作成
-    if comparison_mode == "IDグループで分類":
-        create_detailed_analysis_charts(df, selected_players, selected_id, selected_metrics)
-    else:
-        # 個別選択モード用のグラフ作成（IDグループを横断）
-        create_detailed_analysis_charts_individual(df, selected_players, selected_metrics)
+    # Create graphs for each selected item
+    create_detailed_analysis_charts(df, selected_players, selected_id, selected_metrics)
 
 def create_detailed_analysis_charts(df, selected_players, id_group, selected_metrics):
-    """選択された各項目の絶対値と変化量のグラフを作成（ID別グルーピング対応版）"""
+    """Create absolute value and change graphs for each selected item (ID grouping supported version)"""
     if not PLOTLY_AVAILABLE:
-        st.warning("Plotlyが利用できないため、グラフを表示できません。")
+        st.warning("Plotly is not available, so graphs cannot be displayed.")
         return
     
     for metric in selected_metrics:
         st.markdown(f"### {metric}")
         
-        # 各選手のデータを収集
+        # Collect data for each player
         players_data = {}
         changes_data = {}
         
         for player_name in selected_players:
-            # 該当選手の全データを取得（項目別の有効データのみ、IDでフィルタ）
+            # Get all data for the player (only valid data for each item, filtered by ID)
             player_all_data = df[(df['名前'] == player_name) & (df['ID'] == id_group)]
             
             if player_all_data.empty or metric not in player_all_data.columns:
                 continue
             
-            # その項目で有効な値があるデータのみフィルター
+            # Filter only data with valid values for that item
             valid_data = player_all_data[
                 player_all_data[metric].notna() & 
                 (player_all_data[metric] != '') & 
@@ -1172,7 +1109,7 @@ def create_detailed_analysis_charts(df, selected_players, id_group, selected_met
             if valid_data.empty:
                 continue
             
-            # 測定日でソートして時系列データを作成
+            # Sort by measurement date to create time series data
             if '測定日' in valid_data.columns:
                 valid_data['測定日'] = pd.to_datetime(valid_data['測定日'], errors='coerce')
                 valid_data = valid_data.dropna(subset=['測定日']).sort_values('測定日')
@@ -1180,13 +1117,13 @@ def create_detailed_analysis_charts(df, selected_players, id_group, selected_met
             if len(valid_data) == 0:
                 continue
             
-            # 絶対値データ
+            # Absolute value data
             players_data[player_name] = {
                 'dates': valid_data['測定日'].tolist() if '測定日' in valid_data.columns else list(range(len(valid_data))),
                 'values': valid_data[metric].tolist()
             }
             
-            # 変化量データ（前回から今回への変化）
+            # Change data (change from previous to current)
             if len(valid_data) > 1:
                 changes = []
                 change_dates = []
@@ -1204,127 +1141,43 @@ def create_detailed_analysis_charts(df, selected_players, id_group, selected_met
                         'changes': changes
                     }
         
-        # グラフを縦に2つ並べて表示（横幅フル活用）
-        # 絶対値の折れ線グラフ
+        # Display 2 graphs vertically (full use of horizontal width)
+        # Line graph of absolute values
         abs_chart = create_absolute_values_chart(players_data, metric)
         if abs_chart:
             st.plotly_chart(abs_chart, use_container_width=True, config={'displayModeBar': False})
         
-        # 変化量の棒グラフ
+        # Bar graph of changes
         change_chart = create_changes_bar_chart(changes_data, metric)
         if change_chart:
             st.plotly_chart(change_chart, use_container_width=True, config={'displayModeBar': False})
         
-        # その項目の詳細テーブルを追加
+        # Add detailed table for that item
         metric_detail_table = create_metric_detail_table(df, selected_players, id_group, metric)
         if not metric_detail_table.empty:
-            st.markdown(f"**{metric} - 詳細データ**")
+            st.markdown(f"**{metric} - Detailed Data**")
             
-            # スタイリングされたHTMLテーブルとして表示
+            # Display as styled HTML table
             metric_table_html = create_metric_table_html(metric_detail_table, metric)
             st.markdown(metric_table_html, unsafe_allow_html=True)
         
-        st.markdown("---")  # 項目間の区切り線
-
-def create_detailed_analysis_charts_individual(df, selected_players, selected_metrics):
-    """選択された各項目の絶対値と変化量のグラフを作成（個別選択モード用、IDグループを横断）"""
-    if not PLOTLY_AVAILABLE:
-        st.warning("Plotlyが利用できないため、グラフを表示できません。")
-        return
-    
-    for metric in selected_metrics:
-        st.markdown(f"### {metric}")
-        
-        # 各選手のデータを収集（IDグループを問わず）
-        players_data = {}
-        changes_data = {}
-        
-        for player_name in selected_players:
-            # 該当選手の全データを取得（IDグループは問わない）
-            player_all_data = df[df['名前'] == player_name]
-            
-            if player_all_data.empty or metric not in player_all_data.columns:
-                continue
-            
-            # その項目で有効な値があるデータのみフィルター
-            valid_data = player_all_data[
-                player_all_data[metric].notna() & 
-                (player_all_data[metric] != '') & 
-                (player_all_data[metric] != 'null')
-            ].copy()
-            
-            if valid_data.empty:
-                continue
-            
-            # 測定日でソートして時系列データを作成
-            if '測定日' in valid_data.columns:
-                valid_data['測定日'] = pd.to_datetime(valid_data['測定日'], errors='coerce')
-                valid_data = valid_data.dropna(subset=['測定日']).sort_values('測定日')
-            
-            if len(valid_data) == 0:
-                continue
-            
-            # 絶対値データ
-            players_data[player_name] = {
-                'dates': valid_data['測定日'].tolist() if '測定日' in valid_data.columns else list(range(len(valid_data))),
-                'values': valid_data[metric].tolist()
-            }
-            
-            # 変化量データ（前回から今回への変化）
-            if len(valid_data) > 1:
-                changes = []
-                change_dates = []
-                values = valid_data[metric].tolist()
-                dates = valid_data['測定日'].tolist() if '測定日' in valid_data.columns else list(range(len(valid_data)))
-                
-                for i in range(1, len(values)):
-                    change = values[i] - values[i-1]
-                    changes.append(change)
-                    change_dates.append(dates[i])
-                
-                if changes:
-                    changes_data[player_name] = {
-                        'dates': change_dates,
-                        'changes': changes
-                    }
-        
-        # グラフを縦に2つ並べて表示（横幅フル活用）
-        # 絶対値の折れ線グラフ
-        abs_chart = create_absolute_values_chart(players_data, metric)
-        if abs_chart:
-            st.plotly_chart(abs_chart, use_container_width=True, config={'displayModeBar': False})
-        
-        # 変化量の棒グラフ
-        change_chart = create_changes_bar_chart(changes_data, metric)
-        if change_chart:
-            st.plotly_chart(change_chart, use_container_width=True, config={'displayModeBar': False})
-        
-        # その項目の詳細テーブルを追加（個別選択モード用）
-        metric_detail_table = create_metric_detail_table_individual(df, selected_players, metric)
-        if not metric_detail_table.empty:
-            st.markdown(f"**{metric} - 詳細データ**")
-            
-            # スタイリングされたHTMLテーブルとして表示
-            metric_table_html = create_metric_table_html(metric_detail_table, metric)
-            st.markdown(metric_table_html, unsafe_allow_html=True)
-        
-        st.markdown("---")  # 項目間の区切り線
+        st.markdown("---")  # Separator line between items
 
 def create_metric_detail_table(df, selected_players, id_group, metric):
-    """特定の項目の詳細テーブルを作成（ID別グルーピング対応版）"""
+    """Create detailed table for specific item (ID grouping supported version)"""
     table_data = []
     
     for player_name in selected_players:
-        # 項目ごとの最新・前回データを取得
+        # Get latest and previous data for each item
         latest_val, previous_val, latest_date, previous_date = safe_get_latest_and_previous_for_player(
             df, player_name, id_group, metric
         )
         
-        # 選手のIDを取得
+        # Get player's ID
         player_all_data = df[(df['名前'] == player_name) & (df['ID'] == id_group)]
         player_id = safe_get_value(player_all_data, 'ID', '') if not player_all_data.empty else ''
         
-        # 変化を計算
+        # Calculate change
         if latest_val is not None and previous_val is not None:
             diff = latest_val - previous_val
             if metric == 'Fat%':
@@ -1344,116 +1197,32 @@ def create_metric_detail_table(df, selected_players, id_group, metric):
         else:
             change_display = "-"
         
-        # スコア計算
+        # Calculate score
         if latest_val is not None:
-            id_group_data = df[(df['ID'] == id_group) & (df['名前'] != '目標値')]
+            id_group_data = df[(df['ID'] == id_group) & (df['名前'] != 'Target')]
             score = calculate_z_score(latest_val, id_group_data, metric)
         else:
             score = "-"
         
         table_data.append({
-            '選手名': player_name,
+            'Player Name': player_name,
             'ID': player_id if player_id != '' else '-',
-            '最新値': format_value(latest_val, "", metric) if latest_val is not None else "-",
-            '最新測定日': latest_date,
-            '前回値': format_value(previous_val, "", metric) if previous_val is not None else "-",
-            '前回測定日': previous_date,
-            '変化': change_display,
-            'スコア': score
-        })
-    
-    return pd.DataFrame(table_data)
-
-def create_metric_detail_table_individual(df, selected_players, metric):
-    """特定の項目の詳細テーブルを作成（個別選択モード用、IDグループを横断）"""
-    table_data = []
-    
-    for player_name in selected_players:
-        # 選手のIDを取得
-        player_all_data = df[df['名前'] == player_name]
-        player_id = safe_get_value(player_all_data, 'ID', '') if not player_all_data.empty else ''
-        
-        # 項目ごとの最新・前回データを取得（IDグループを問わず）
-        if not player_all_data.empty and metric in player_all_data.columns:
-            valid_data = player_all_data[
-                player_all_data[metric].notna() & 
-                (player_all_data[metric] != '') & 
-                (player_all_data[metric] != 'null')
-            ].copy()
-            
-            if '測定日' in valid_data.columns:
-                valid_data['測定日'] = pd.to_datetime(valid_data['測定日'], errors='coerce')
-                valid_data = valid_data.dropna(subset=['測定日']).sort_values('測定日', ascending=False)
-            
-            # 最新値を取得
-            latest_val = None
-            latest_date = "-"
-            if len(valid_data) > 0:
-                latest_row = valid_data.iloc[0]
-                latest_val = latest_row[metric]
-                if '測定日' in latest_row and pd.notna(latest_row['測定日']):
-                    latest_date = latest_row['測定日'].strftime('%Y-%m-%d')
-            
-            # 前回値を取得
-            previous_val = None
-            previous_date = "-"
-            if len(valid_data) > 1:
-                previous_row = valid_data.iloc[1]
-                previous_val = previous_row[metric]
-                if '測定日' in previous_row and pd.notna(previous_row['測定日']):
-                    previous_date = previous_row['測定日'].strftime('%Y-%m-%d')
-        else:
-            latest_val = None
-            previous_val = None
-            latest_date = "-"
-            previous_date = "-"
-        
-        # 変化を計算
-        if latest_val is not None and previous_val is not None:
-            diff = latest_val - previous_val
-            if metric == 'Fat%':
-                if diff > 0:
-                    change_display = f"+{diff * 100:.2f}%"
-                elif diff < 0:
-                    change_display = f"{diff * 100:.2f}%"
-                else:
-                    change_display = "0.00%"
-            else:
-                if diff > 0:
-                    change_display = f"+{diff:.2f}"
-                elif diff < 0:
-                    change_display = f"{diff:.2f}"
-                else:
-                    change_display = "0.00"
-        else:
-            change_display = "-"
-        
-        # スコア計算（選手自身のIDグループ内での評価）
-        if latest_val is not None and player_id:
-            player_id_group_data = df[(df['ID'] == player_id) & (df['名前'] != '目標値')]
-            score = calculate_z_score(latest_val, player_id_group_data, metric)
-        else:
-            score = "-"
-        
-        table_data.append({
-            '選手名': player_name,
-            'ID': player_id if player_id != '' else '-',
-            '最新値': format_value(latest_val, "", metric) if latest_val is not None else "-",
-            '最新測定日': latest_date,
-            '前回値': format_value(previous_val, "", metric) if previous_val is not None else "-",
-            '前回測定日': previous_date,
-            '変化': change_display,
-            'スコア': score
+            'Latest Value': format_value(latest_val, "", metric) if latest_val is not None else "-",
+            'Latest Date': latest_date,
+            'Previous Value': format_value(previous_val, "", metric) if previous_val is not None else "-",
+            'Previous Date': previous_date,
+            'Change': change_display,
+            'Score': score
         })
     
     return pd.DataFrame(table_data)
 
 def create_metric_table_html(df, metric):
-    """項目別詳細テーブルのHTMLを作成"""
+    """Create HTML for item-specific detail table"""
     if df.empty:
-        return "<p>データがありません</p>"
+        return "<p>No data available</p>"
     
-    # テーブルの開始
+    # Start of table
     html = """
     <style>
     .metric-detail-table {
@@ -1514,48 +1283,48 @@ def create_metric_table_html(df, metric):
     <table class="metric-detail-table">
     """
     
-    # ヘッダー行
+    # Header row
     html += """<thead><tr>
-        <th>選手名</th>
+        <th>Player Name</th>
         <th>ID</th>
-        <th>最新値</th>
-        <th>前回値</th>
-        <th>変化</th>
+        <th>Latest Value</th>
+        <th>Previous Value</th>
+        <th>Change</th>
     </tr></thead>"""
     
-    # データ行
+    # Data rows
     html += "<tbody>"
     for _, row in df.iterrows():
         html += "<tr>"
         
-        # 選手名
-        html += f"<td class='metric-player-name'>{row['選手名']}</td>"
+        # Player name
+        html += f"<td class='metric-player-name'>{row['Player Name']}</td>"
         
         # ID
         html += f"<td>{row['ID']}</td>"
         
-        # 最新値
-        html += f"<td>{row['最新値']}</td>"
+        # Latest value
+        html += f"<td>{row['Latest Value']}</td>"
         
-        # 前回値
-        html += f"<td>{row['前回値']}</td>"
+        # Previous value
+        html += f"<td>{row['Previous Value']}</td>"
         
-        # 変化（色付き）
-        change_val = row['変化']
+        # Change (colored)
+        change_val = row['Change']
         change_class = ""
         if change_val != "-" and change_val != "0.00" and change_val != "0.00%":
             if metric in ['20m Sprint(s)', 'Pro Agility', 'CODD']:
-                # Sprint系は値が下がると良い
+                # For Sprint metrics, lower values are better
                 if change_val.startswith('+'):
-                    change_class = "metric-sprint-change-positive"  # 悪化（赤）
+                    change_class = "metric-sprint-change-positive"  # Worse (red)
                 elif change_val.startswith('-'):
-                    change_class = "metric-sprint-change-negative"  # 改善（緑）
+                    change_class = "metric-sprint-change-negative"  # Better (green)
             else:
-                # その他は値が上がると良い
+                # For others, higher values are better
                 if change_val.startswith('+'):
-                    change_class = "metric-change-positive"  # 改善（緑）
+                    change_class = "metric-change-positive"  # Better (green)
                 elif change_val.startswith('-'):
-                    change_class = "metric-change-negative"  # 悪化（赤）
+                    change_class = "metric-change-negative"  # Worse (red)
         
         html += f"<td class='{change_class}'>{change_val}</td>"
         
@@ -1566,13 +1335,13 @@ def create_metric_table_html(df, metric):
     return html
 
 def create_absolute_values_chart(players_data, metric):
-    """絶対値の折れ線グラフを作成（目標値ライン付き）"""
+    """Create line graph of absolute values (with target value line)"""
     if not players_data:
         return None
     
     fig = go.Figure()
     
-    # 50人対応の色パレット
+    # Color palette for 50 players
     colors = [
         '#4B5563', '#EF4444', '#10B981', '#7C3AED', '#F59E0B', 
         '#EC4899', '#14B8A6', '#F97316', '#6366F1', '#84CC16',
@@ -1596,10 +1365,10 @@ def create_absolute_values_chart(players_data, metric):
             name=player_name,
             line=dict(color=color, width=3),
             marker=dict(size=8, color=color, line=dict(width=2, color='white')),
-            hovertemplate=f'<b>{player_name}</b><br>日付: %{{x}}<br>{metric}: %{{y}}<extra></extra>'
+            hovertemplate=f'<b>{player_name}</b><br>Date: %{{x}}<br>{metric}: %{{y}}<extra></extra>'
         ))
     
-    # 目標値ラインを追加
+    # Add target value line
     target_values = {
         'LBM/m': 42,
         'BMI': 25,
@@ -1626,7 +1395,7 @@ def create_absolute_values_chart(players_data, metric):
             line_dash="dash",
             line_color="#DC2626",
             line_width=3,
-            annotation_text=f"目標値: {goal_val}",
+            annotation_text=f"Target: {goal_val}",
             annotation_position="top right",
             annotation=dict(
                 font=dict(size=12, color="#DC2626"),
@@ -1638,11 +1407,11 @@ def create_absolute_values_chart(players_data, metric):
     
     fig.update_layout(
         title=dict(
-            text=f'{metric} - 絶対値推移',
+            text=f'{metric} - Absolute Value Trend',
             x=0.5,
             font=dict(size=14, color='#1F2937')
         ),
-        xaxis=dict(title="測定日"),
+        xaxis=dict(title="Measurement Date"),
         yaxis=dict(title=metric),
         height=400,
         showlegend=True,
@@ -1661,42 +1430,42 @@ def create_absolute_values_chart(players_data, metric):
     return fig
 
 def create_changes_bar_chart(changes_data, metric):
-    """変化量の棒グラフを作成（最新の変化のみ）"""
+    """Create bar graph of changes (latest change only)"""
     if not changes_data:
         return None
     
     fig = go.Figure()
     
-    # 各選手の最新の変化量のみを取得
+    # Get only latest change for each player
     players = []
     latest_changes = []
     bar_colors = []
     
-    # Sprint系項目は色の意味が逆転
+    # For sprint metrics, color meaning is reversed
     is_sprint_metric = metric in ['20m Sprint(s)', 'Pro Agility', 'CODD']
     
     for player_name, data in changes_data.items():
         if data['changes']:
-            # 最新の変化量（リストの最後の要素）
+            # Latest change (last element of list)
             latest_change = data['changes'][-1]
             players.append(player_name)
             latest_changes.append(latest_change)
             
-            # 色を決定
-            if abs(latest_change) < 0.001:  # 変化なし
-                bar_colors.append('#94A3B8')  # グレー
+            # Determine color
+            if abs(latest_change) < 0.001:  # No change
+                bar_colors.append('#94A3B8')  # Gray
             elif is_sprint_metric:
-                # Sprint系は値が下がると良い（緑）、上がると悪い（赤）
+                # For sprint metrics, lower is better (green), higher is worse (red)
                 if latest_change < 0:
-                    bar_colors.append('#10B981')  # 緑（改善）
+                    bar_colors.append('#10B981')  # Green (improved)
                 else:
-                    bar_colors.append('#EF4444')  # 赤（悪化）
+                    bar_colors.append('#EF4444')  # Red (worsened)
             else:
-                # その他は値が上がると良い（緑）、下がると悪い（赤）
+                # For others, higher is better (green), lower is worse (red)
                 if latest_change > 0:
-                    bar_colors.append('#10B981')  # 緑（改善）
+                    bar_colors.append('#10B981')  # Green (improved)
                 else:
-                    bar_colors.append('#EF4444')  # 赤（悪化）
+                    bar_colors.append('#EF4444')  # Red (worsened)
     
     if not players:
         return None
@@ -1708,24 +1477,24 @@ def create_changes_bar_chart(changes_data, metric):
             color=bar_colors,
             line=dict(width=1, color='#1F2937')
         ),
-        hovertemplate='<b>%{x}</b><br>変化: %{y:.2f}<extra></extra>',
+        hovertemplate='<b>%{x}</b><br>Change: %{y:.2f}<extra></extra>',
         showlegend=False
     ))
     
-    # ゼロ線を追加
+    # Add zero line
     fig.add_hline(y=0, line_dash="solid", line_color="black", line_width=1)
     
     fig.update_layout(
         title=dict(
-            text=f'{metric} - 最新変化量',
+            text=f'{metric} - Latest Change',
             x=0.5,
             font=dict(size=14, color='#1F2937')
         ),
         xaxis=dict(
-            title="選手名",
+            title="Player Name",
             tickangle=45 if len(players) > 8 else 0
         ),
-        yaxis=dict(title=f"{metric} 変化量"),
+        yaxis=dict(title=f"{metric} Change"),
         height=400,
         plot_bgcolor='rgba(248, 250, 252, 0.5)',
         paper_bgcolor='white',
@@ -1735,7 +1504,7 @@ def create_changes_bar_chart(changes_data, metric):
     return fig
 
 def create_dual_axis_chart(historical_data, primary_metric, secondary_metric, title, goal_data=None):
-    """2軸グラフを作成"""
+    """Create dual-axis graph"""
     if not PLOTLY_AVAILABLE:
         return None
     
@@ -1782,7 +1551,7 @@ def create_dual_axis_chart(historical_data, primary_metric, secondary_metric, ti
                     line=dict(color='#4B5563', width=4),
                     marker=dict(size=10, color='#4B5563'),
                     yaxis='y',
-                    hovertemplate=f'<b>{primary_metric}</b><br>日付: %{{x}}<br>値: %{{y}}<extra></extra>'
+                    hovertemplate=f'<b>{primary_metric}</b><br>Date: %{{x}}<br>Value: %{{y}}<extra></extra>'
                 )
             )
         
@@ -1796,13 +1565,13 @@ def create_dual_axis_chart(historical_data, primary_metric, secondary_metric, ti
                     line=dict(color='#EF4444', width=4),
                     marker=dict(size=10, color='#EF4444'),
                     yaxis='y2',
-                    hovertemplate=f'<b>{secondary_metric}</b><br>日付: %{{x}}<br>値: %{{y}}<extra></extra>'
+                    hovertemplate=f'<b>{secondary_metric}</b><br>Date: %{{x}}<br>Value: %{{y}}<extra></extra>'
                 )
             )
         
         fig.update_layout(
             title=str(title),
-            xaxis_title="測定日",
+            xaxis_title="Measurement Date",
             yaxis=dict(
                 title=str(primary_metric),
                 side='left',
@@ -1826,7 +1595,7 @@ def create_dual_axis_chart(historical_data, primary_metric, secondary_metric, ti
         return None
 
 def create_triple_axis_chart(historical_data, primary_metric, secondary_metric, tertiary_metric, title, goal_data=None):
-    """3軸グラフを作成（20mスプリント、アジリティ、CODD用）"""
+    """Create triple-axis graph (for 20m Sprint, Agility, CODD)"""
     if not PLOTLY_AVAILABLE:
         return None
     
@@ -1879,8 +1648,8 @@ def create_triple_axis_chart(historical_data, primary_metric, secondary_metric, 
             secondary_y=True
         )
     
-    fig.update_yaxes(title_text=f"{primary_metric} / {secondary_metric} (秒)", secondary_y=False)
-    fig.update_yaxes(title_text=f"{tertiary_metric} (秒)", secondary_y=True)
+    fig.update_yaxes(title_text=f"{primary_metric} / {secondary_metric} (sec)", secondary_y=False)
+    fig.update_yaxes(title_text=f"{tertiary_metric} (sec)", secondary_y=True)
     
     fig.update_layout(
         title=dict(
@@ -1888,7 +1657,7 @@ def create_triple_axis_chart(historical_data, primary_metric, secondary_metric, 
             x=0.5,
             font=dict(size=16, color='#1F2937')
         ),
-        xaxis=dict(title="測定日"),
+        xaxis=dict(title="Measurement Date"),
         height=300,
         showlegend=True,
         plot_bgcolor='rgba(248, 250, 252, 0.5)',
@@ -1900,7 +1669,7 @@ def create_triple_axis_chart(historical_data, primary_metric, secondary_metric, 
     return fig
 
 def create_single_chart(historical_data, metric, title, goal_data=None):
-    """単一メトリクス用のチャート（Sprint MomentumとBW*20m Mulch用の特別処理を追加）"""
+    """Chart for single metric (with special handling for Sprint Momentum and BW*20m Mulch)"""
     if not PLOTLY_AVAILABLE:
         return None
         
@@ -1991,7 +1760,7 @@ def create_single_chart(historical_data, metric, title, goal_data=None):
                     line_dash="dash",
                     line_color="#DC2626",
                     line_width=3,
-                    annotation_text=f"目標値: {goal_val:.1f}",
+                    annotation_text=f"Target: {goal_val:.1f}",
                     annotation_position="top right"
                 )
     
@@ -2001,7 +1770,7 @@ def create_single_chart(historical_data, metric, title, goal_data=None):
             x=0.5,
             font=dict(size=18, color='#1F2937')
         ),
-        xaxis=dict(title="測定日"),
+        xaxis=dict(title="Measurement Date"),
         yaxis=dict(title=metric),
         height=400,
         showlegend=True,
@@ -2014,7 +1783,7 @@ def create_single_chart(historical_data, metric, title, goal_data=None):
     return fig
 
 def create_strength_chart(historical_data, title, goal_data=None):
-    """ストレングス専用チャート（BSQ & BP）"""
+    """Dedicated strength chart (BSQ & BP)"""
     if not PLOTLY_AVAILABLE:
         return None
         
@@ -2044,7 +1813,7 @@ def create_strength_chart(historical_data, title, goal_data=None):
                     line_dash="dash",
                     line_color="#DC2626",
                     line_width=2,
-                    annotation_text=f"BSQ目標: {goal_val:.1f}kg",
+                    annotation_text=f"BSQ Target: {goal_val:.1f}kg",
                     annotation_position="top left"
                 )
     
@@ -2067,7 +1836,7 @@ def create_strength_chart(historical_data, title, goal_data=None):
                     line_dash="dash",
                     line_color="#F59E0B",
                     line_width=2,
-                    annotation_text=f"BP目標: {goal_val:.1f}kg",
+                    annotation_text=f"BP Target: {goal_val:.1f}kg",
                     annotation_position="top right"
                 )
     
@@ -2077,8 +1846,8 @@ def create_strength_chart(historical_data, title, goal_data=None):
             x=0.5,
             font=dict(size=16, color='#1F2937')
         ),
-        xaxis=dict(title="測定日"),
-        yaxis=dict(title="重量 (kg)"),
+        xaxis=dict(title="Measurement Date"),
+        yaxis=dict(title="Weight (kg)"),
         height=300,
         showlegend=True,
         plot_bgcolor='rgba(248, 250, 252, 0.5)',
@@ -2090,21 +1859,21 @@ def create_strength_chart(historical_data, title, goal_data=None):
     return fig
 
 def show_welcome_screen():
-    """ウェルカム画面を表示"""
+    """Display welcome screen"""
     st.markdown("""
     <div class="welcome-container">
-        <div class="welcome-title">SR SHIBUYA 測定データ</div>
-        <div class="welcome-subtitle">選手のパフォーマンスデータを分析・可視化</div>
+        <div class="welcome-title">SR SHIBUYA Measurement Data</div>
+        <div class="welcome-subtitle">Analyze and visualize player performance data</div>
         <p style="color: #64748B; font-size: 1rem; margin-top: 1rem;">
-            サイドバーで選手名を入力してください
+            Please enter a player name in the sidebar
         </p>
     </div>
     """, unsafe_allow_html=True)
 
 def generate_individual_feedback(player_data, comparison_data, player_name):
-    """個別選手のフィードバックコメントを生成"""
+    """Generate feedback comments for individual players"""
     try:
-        # 3つの指標のスコアを計算
+        # Calculate scores for 3 indicators
         key_metrics = ['Sprint Momentum', 'BW*20m Mulch', 'LBM/m']
         scores = {}
         
@@ -2114,182 +1883,193 @@ def generate_individual_feedback(player_data, comparison_data, player_name):
                 score = calculate_z_score(player_val, comparison_data, metric)
                 scores[metric] = score
             else:
-                scores[metric] = 3  # デフォルト値
+                scores[metric] = 3  # Default value
         
-        # スコアを日本語名でマッピング
-        japanese_scores = {
-            'スプリント勢い': scores.get('Sprint Momentum', 3),
-            '持久力': scores.get('BW*20m Mulch', 3),
-            '筋力': scores.get('LBM/m', 3)
+        # Map scores to English names
+        english_scores = {
+            'Speed Power': scores.get('Sprint Momentum', 3),
+            'Endurance': scores.get('BW*20m Mulch', 3),
+            'Strength': scores.get('LBM/m', 3)
         }
         
-        # 総合評価の計算
+        # Calculate overall evaluation
         valid_scores = [s for s in scores.values() if s > 0]
         overall_avg = np.mean(valid_scores) if valid_scores else 3
         
         feedback_parts = []
         
-        # 導入部分
+        # Introduction
         if overall_avg >= 4.5:
-            intro = f"{player_name}選手は、非常に優れたフィジカル能力を示しており、競技レベルでの更なる活躍が大いに期待できます。"
+            intro = f"{player_name} demonstrates exceptional physical capabilities and shows great potential for further success at the competitive level."
         elif overall_avg >= 4:
-            intro = f"{player_name}選手は、優秀なフィジカル能力を持っており、さらなる専門性向上により一層の成長が期待できます。"
+            intro = f"{player_name} possesses excellent physical abilities and can be expected to achieve further growth through enhanced specialization."
         elif overall_avg >= 3:
-            intro = f"{player_name}選手は、各分野において安定した基礎能力を有しており、継続的なトレーニングで着実な成長が期待できます。"
+            intro = f"{player_name} has stable foundational abilities in each area and can be expected to achieve steady growth through continuous training."
         else:
-            intro = f"{player_name}選手は、豊富な成長ポテンシャルがあり、継続的なトレーニングで確実に向上していきます。"
+            intro = f"{player_name} has abundant growth potential and will surely improve through continuous training."
         
         feedback_parts.append(intro)
         
-        # 優れている分野の特定
+        # Identify strengths
         strengths = []
-        for area, score in japanese_scores.items():
+        for area, score in english_scores.items():
             if score >= 4:
                 strengths.append(area)
         
         if strengths:
             if len(strengths) == 1:
-                feedback_parts.append(f"特に{strengths[0]}において優秀な能力を発揮しており、この強みを活かした競技力向上が期待できます。")
+                feedback_parts.append(f"Particularly showing excellent abilities in {strengths[0]}, further competitive improvement can be expected by leveraging this strength.")
             else:
-                feedback_parts.append(f"特に{strengths[0]}と{strengths[1]}において優秀な能力を発揮しており、これらの強みを軸とした更なる発展が見込まれます。")
+                feedback_parts.append(f"Particularly showing excellent abilities in {strengths[0]} and {strengths[1]}, further development centered on these strengths is anticipated.")
         
-        # 改善が必要な分野の特定と具体的なアドバイス
+        # Identify areas needing improvement and specific advice
         weaknesses = []
         improvement_suggestions = []
         
-        for area, score in japanese_scores.items():
+        for area, score in english_scores.items():
             if score <= 2:
                 weaknesses.append(area)
                 
-                if area == 'スプリント勢い':
+                if area == 'Speed Power':
                     improvement_suggestions.append({
-                        'area': 'スプリント能力',
-                        'methods': 'スタートダッシュの技術向上、股関節の可動域改善、体重移動の最適化',
-                        'details': '地面からの反発力を最大限活用するため、足首の可動域を広げ、推進力を高める動作の習得'
+                        'area': 'Sprint ability',
+                        'methods': 'improving start dash technique, enhancing hip joint mobility, optimizing weight transfer',
+                        'details': 'acquiring movements that maximize propulsion by maximizing ground reaction force, expanding ankle mobility and enhancing propulsive power'
                     })
-                elif area == '持久力':
+                elif area == 'Endurance':
                     improvement_suggestions.append({
-                        'area': '持久力',
-                        'methods': '心肺機能向上トレーニング、筋持久力強化、効率的な動作パターンの習得',
-                        'details': '長時間のパフォーマンス維持のため、呼吸法の改善と疲労に負けない体幹強化'
+                        'area': 'endurance',
+                        'methods': 'cardiopulmonary function improvement training, muscular endurance strengthening, learning efficient movement patterns',
+                        'details': 'improving breathing techniques for long-term performance maintenance and core strengthening to resist fatigue'
                     })
-                elif area == '筋力':
+                elif area == 'Strength':
                     improvement_suggestions.append({
-                        'area': '筋力',
-                        'methods': 'スクワットのフォーム確立、胸椎の可動域改善、全身連動性の向上',
-                        'details': '基礎筋力の向上に加えて、動作の質を高めることで効率的な力発揮を実現'
+                        'area': 'strength',
+                        'methods': 'establishing squat form, improving thoracic spine mobility, enhancing whole-body coordination',
+                        'details': 'realizing efficient force exertion by improving movement quality in addition to basic strength improvement'
                     })
         
-        # 改善点のフィードバック
+        # Feedback on areas for improvement
         if weaknesses:
             if len(weaknesses) == 1:
-                feedback_parts.append(f"{weaknesses[0]}に課題が見られるため、この部分を強化することが今後の成長ポイントです。")
+                feedback_parts.append(f"Challenges are seen in {weaknesses[0]}, so strengthening this area will be a key growth point going forward.")
             else:
-                feedback_parts.append(f"{weaknesses[0]}と{weaknesses[1]}に課題が見られるため、これらの部分を強化することが今後の成長ポイントです。")
+                feedback_parts.append(f"Challenges are seen in {weaknesses[0]} and {weaknesses[1]}, so strengthening these areas will be key growth points going forward.")
             
-            # 具体的なトレーニング提案
+            # Specific training proposals
             if improvement_suggestions:
                 main_suggestion = improvement_suggestions[0]
-                feedback_parts.append(f"{main_suggestion['area']}の向上には{main_suggestion['methods']}が必要と考えています。特に、{main_suggestion['details']}が重要です。これらは競技パフォーマンスを向上させる基盤となります。")
+                feedback_parts.append(f"For improving {main_suggestion['area']}, we believe {main_suggestion['methods']} are necessary. In particular, {main_suggestion['details']} are important. These will become the foundation for improving competitive performance.")
         
-        # バランスの取れた選手への提案（スコアが3の場合）
-        balanced_areas = [area for area, score in japanese_scores.items() if score == 3]
+        # Proposals for well-balanced players (when score is 3)
+        balanced_areas = [area for area, score in english_scores.items() if score == 3]
         if len(balanced_areas) >= 2 and not weaknesses:
-            feedback_parts.append("現在は各能力がバランス良く発達している段階であり、どの分野も向上の余地があります。継続的なトレーニングでさらなる成長を目指しましょう。")
+            feedback_parts.append("Currently at a stage where each ability is developing in a well-balanced manner, with room for improvement in any area. Let's aim for further growth through continuous training.")
         
-        # 励ましのまとめ
+        # Encouraging summary
         if weaknesses:
             primary_weakness = weaknesses[0]
-            if primary_weakness == 'スプリント勢い':
-                closing = "これからは、フォームの確認や可動域を高めるトレーニングに積極的に取り組み、爆発的なスプリント能力を身につけた選手へと成長していきましょう。"
-            elif primary_weakness == '持久力':
-                closing = "これからは、持続的な運動能力を高めるトレーニングに取り組み、試合を通じて安定したパフォーマンスを発揮できる選手へと成長していきましょう。"
-            elif primary_weakness == '筋力':
-                closing = "これからは、基礎筋力向上と動作の質を高めるトレーニングに積極的に取り組み、力強い動作を実現できる選手へと成長していきましょう。"
+            if primary_weakness == 'Speed Power':
+                closing = "Going forward, let's actively work on form checking and training to increase range of motion, and grow into a player with explosive sprint ability."
+            elif primary_weakness == 'Endurance':
+                closing = "Going forward, let's work on training to enhance sustained exercise capacity and grow into a player who can demonstrate stable performance throughout matches."
+            elif primary_weakness == 'Strength':
+                closing = "Going forward, let's actively work on training to improve basic strength and movement quality, and grow into a player who can realize powerful movements."
             else:
-                closing = "これからは、課題となる分野を重点的に強化し、バランスの取れた総合的な能力を持つ選手へと成長していきましょう。"
+                closing = "Going forward, let's focus intensively on strengthening areas that are challenges and grow into a player with well-balanced comprehensive abilities."
         else:
-            closing = "現在の優れた能力をさらに伸ばしつつ、総合的なフィジカル能力の向上を目指して取り組んでいきましょう。"
+            closing = "Let's aim to further develop current excellent abilities while improving overall physical capacity."
         
         feedback_parts.append(closing)
-        feedback_parts.append("努力の積み重ねが必ず成果につながります。")
+        feedback_parts.append("Accumulated efforts will surely lead to results.")
         
         return " ".join(feedback_parts)
         
     except Exception as e:
-        return f"{player_name}選手の個別分析を実施しています。継続的なトレーニングで着実な向上を目指していきましょう。"
+        return f"Conducting individual analysis of {player_name}. Let's aim for steady improvement through continuous training."
 
 def main():
-    # データ読み込み
+    # Load data
     df = load_data()
     if df.empty:
-        st.error("データが読み込めませんでした。SR_physicaldata.xlsxファイルが存在することを確認してください。")
+        st.error("Could not load data. Please confirm that the SR_physicaldata.xlsx file exists.")
         st.stop()
     
-    # ページ選択を追加
+    # Add page selection
     page = st.sidebar.selectbox(
-        "ページ選択",
-        ["比較分析", "個人分析"],
-        help="分析モードを選択してください"
+        "Page Selection",
+        ["Comparative Analysis", "Individual Analysis"],
+        help="Select analysis mode"
     )
     
-    if page == "個人分析":
+    if page == "Individual Analysis":
         show_individual_analysis(df)
         return
     
-    # 比較分析がメイン
+    # Comparative analysis is main
     show_team_analysis(df)
 
 def show_individual_analysis(df):
-    """個人分析画面を表示"""
-    st.markdown('<div class="main-header">SR SHIBUYA 測定データ</div>', 
+    """Display individual analysis screen"""
+    st.markdown('<div class="main-header">SR SHIBUYA Measurement Data</div>', 
                 unsafe_allow_html=True)
     
-    # サイドバー
-    st.sidebar.header("選手選択")
+    # Sidebar
+    st.sidebar.header("Player Selection")
     
-# 利用可能な選手名リストを取得
-    available_names = sorted(df[df['名前'] != '目標値']['名前'].dropna().unique())
-    
-    if not available_names:
-        st.error("選手データが見つかりません。")
-        return
-    
-    # ドロップダウンで選手を選択
-    selected_name = st.sidebar.selectbox(
-        "選手を選択してください",
-        options=available_names,
-        help="分析したい選手を選択してください"
+    # Add analysis mode selection
+    analysis_mode = st.sidebar.radio(
+        "Analysis Mode",
+        ["Individual Player Analysis", "Batch PDF Report Generation"],
+        help="Individual Player Analysis: Detailed analysis of one player\nBatch PDF Report Generation: Generate PDFs for all players by specifying category and date"
     )
     
-    # 選択した選手の利用可能カテゴリーを取得
-    player_categories = sorted(df[df['名前'] == selected_name]['カテゴリー'].dropna().unique())
-    if len(player_categories) == 0:
-        st.error(f"選手 '{selected_name}' のカテゴリーデータが見つかりません。")
+    if analysis_mode == "Batch PDF Report Generation":
+        show_batch_pdf_generation(df)
         return
     
-    # カテゴリー選択
+    # Get available player name list
+    available_names = sorted(df[df['名前'] != 'Target']['名前'].dropna().unique())
+    
+    if not available_names:
+        st.error("No player data found.")
+        return
+    
+    # Select player with dropdown
+    selected_name = st.sidebar.selectbox(
+        "Select a player",
+        options=available_names,
+        help="Select the player you want to analyze"
+    )
+    
+    # Get available categories for selected player
+    player_categories = sorted(df[df['名前'] == selected_name]['カテゴリー'].dropna().unique())
+    if len(player_categories) == 0:
+        st.error(f"No category data found for player '{selected_name}'.")
+        return
+    
+    # Category selection
     if len(player_categories) == 1:
         selected_category = player_categories[0]
-        st.sidebar.info(f"カテゴリー: {selected_category}")
+        st.sidebar.info(f"Category: {selected_category}")
     else:
-        selected_category = st.sidebar.selectbox("カテゴリーを選択", player_categories)
+        selected_category = st.sidebar.selectbox("Select Category", player_categories)
     
-    # 選択された選手とカテゴリーのデータを取得
+    # Get data for selected player and category
     player_data = df[(df['名前'] == selected_name) & (df['カテゴリー'] == selected_category)]
     
     if player_data.empty:
-        st.error(f"選手 '{selected_name}' の {selected_category} データが見つかりません。")
+        st.error(f"No {selected_category} data found for player '{selected_name}'.")
         return
     
-    # 設定取得
+    # Get configuration
     config = get_category_config(selected_category)
     
-    # 比較データ（同カテゴリーの選手データ）
-    category_avg = df[(df['カテゴリー'] == selected_category) & (df['名前'] != '目標値')]
-    goal_data = df[df['名前'] == '目標値']
+    # Comparison data (player data in same category)
+    category_avg = df[(df['カテゴリー'] == selected_category) & (df['名前'] != 'Target')]
+    goal_data = df[df['名前'] == 'Target']
     
-    # 選手情報表示
+    # Display player information
     col1, col2 = st.columns([3, 1])
     with col1:
         st.markdown(f'<div class="player-title">{selected_name} ({selected_category})</div>', unsafe_allow_html=True)
@@ -2299,20 +2079,20 @@ def show_individual_analysis(df):
             latest_date = all_dates.iloc[0]
             oldest_date = all_dates.iloc[-1]
             measurement_count = len(all_dates)
-            st.markdown(f'<div class="date-info">測定回数: {measurement_count}回<br>期間: {oldest_date} ～ {latest_date}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="date-info">Measurements: {measurement_count} times<br>Period: {oldest_date} - {latest_date}</div>', unsafe_allow_html=True)
     
-    # 包括的概要テーブル
-    st.markdown('<div class="section-header">測定データ概要</div>', unsafe_allow_html=True)
+    # Comprehensive summary table
+    st.markdown('<div class="section-header">Measurement Data Summary</div>', unsafe_allow_html=True)
     summary_table = create_comprehensive_summary_table(player_data, category_avg, goal_data, config)
     st.markdown(summary_table.to_html(escape=False, index=False), unsafe_allow_html=True)
     
-    # Key Indicators（レーダーチャート付き）
+    # Key Indicators (with radar chart)
     st.markdown('<div class="key-indicator-title">Key Indicators</div>', unsafe_allow_html=True)
     
-    # メトリクスとレーダーチャートを横に並べる
+    # Place metrics and radar chart side by side
     col_metrics, col_radar = st.columns([3, 2])
     
-    # 3つのKey Indicators
+    # 3 Key Indicators
     key_metrics = ['Sprint Momentum', 'BW*20m Mulch', 'LBM/m']
     metric_units = {'Sprint Momentum': '', 'BW*20m Mulch': '', 'LBM/m': ''}
     
@@ -2322,15 +2102,15 @@ def show_individual_analysis(df):
             with highlight_cols[i]:
                 player_val = safe_get_value(player_data, metric)
                 
-                # スコア計算
-                score = 3  # デフォルト値
+                # Calculate score
+                score = 3  # Default value
                 if player_val is not None:
                     score = calculate_z_score(player_val, category_avg, metric)
                 
-                # 表示値の準備
+                # Prepare display value
                 display_val = format_value(player_val, metric_units.get(metric, ''), metric)
                 
-                # スコアに応じた色設定
+                # Color setting according to score
                 if score <= 2:
                     color_style = 'color: #DC2626; text-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);'
                 elif score >= 4:
@@ -2344,26 +2124,26 @@ def show_individual_analysis(df):
                 <div class="metric-card">
                     <div class="metric-label">{metric}</div>
                     <div class="highlight-metric">{display_val_styled}</div>
-                    <div class="comparison-text">スコア: {score}/5</div>
+                    <div class="comparison-text">Score: {score}/5</div>
                 </div>
                 """, unsafe_allow_html=True)
     
     with col_radar:
-        # レーダーチャートを表示
+        # Display radar chart
         radar_chart = create_radar_chart(player_data, category_avg, config)
         if radar_chart:
             st.plotly_chart(radar_chart, use_container_width=True, config={'displayModeBar': False})
         else:
             st.markdown("""
             <p style="text-align: center; color: #64748B; padding: 2rem;">
-                データが不足しているため、<br>レーダーチャートを表示できません
+                Insufficient data to<br>display radar chart
             </p>
             """, unsafe_allow_html=True)
     
-    # 統合グラフセクション（セクション分けして表示）
-    st.markdown('<div class="section-header">測定推移グラフ</div>', unsafe_allow_html=True)
+    # Integrated graph section (displayed by section)
+    st.markdown('<div class="section-header">Measurement Trend Graphs</div>', unsafe_allow_html=True)
     
-    # Body Composition セクション
+    # Body Composition section
     st.markdown("### Body Composition")
     col1, col2 = st.columns(2)
     with col1:
@@ -2383,7 +2163,7 @@ def show_individual_analysis(df):
             if height_chart:
                 st.plotly_chart(height_chart, use_container_width=True, config={'displayModeBar': False})
     
-    # Quickness セクション
+    # Quickness section
     st.markdown("### Quickness")
     if all(col in player_data.columns for col in ['20m Sprint(s)', 'Pro Agility', 'CODD']):
         sprint_agility_chart = create_triple_axis_chart(
@@ -2393,7 +2173,7 @@ def show_individual_analysis(df):
         if sprint_agility_chart:
             st.plotly_chart(sprint_agility_chart, use_container_width=True, config={'displayModeBar': False})
     
-    # Jump セクション
+    # Jump section
     st.markdown("### Jump")
     col1, col2 = st.columns(2)
     with col1:
@@ -2402,7 +2182,7 @@ def show_individual_analysis(df):
             if jump_chart:
                 st.plotly_chart(jump_chart, use_container_width=True, config={'displayModeBar': False})
             else:
-                st.warning("2軸グラフの作成に失敗したため、個別グラフで表示します")
+                st.warning("Failed to create dual-axis graph, displaying as individual graphs")
                 
                 cmj_data = player_data.dropna(subset=['CMJ'])
                 if len(cmj_data) > 0:
@@ -2417,7 +2197,7 @@ def show_individual_analysis(df):
                         st.plotly_chart(rj_chart, use_container_width=True, config={'displayModeBar': False})
         else:
             missing_cols = [col for col in ['CMJ', 'RJ'] if col not in player_data.columns]
-            st.warning(f"必要な列が見つかりません: {missing_cols}")
+            st.warning(f"Required columns not found: {missing_cols}")
     
     with col2:
         if 'BJ' in player_data.columns:
@@ -2425,7 +2205,7 @@ def show_individual_analysis(df):
             if bj_chart:
                 st.plotly_chart(bj_chart, use_container_width=True, config={'displayModeBar': False})
     
-    # Endurance セクション
+    # Endurance section
     st.markdown("### Endurance")
     if all(col in player_data.columns for col in ['20m Mulch', 'BW*20m Mulch']):
         endurance_chart = create_dual_axis_chart(
@@ -2435,22 +2215,22 @@ def show_individual_analysis(df):
         if endurance_chart:
             st.plotly_chart(endurance_chart, use_container_width=True, config={'displayModeBar': False})
     
-    # Strength セクション
+    # Strength section
     st.markdown("### Strength")
     if all(col in player_data.columns for col in ['BSQ', 'BP']):
         strength_chart = create_strength_chart(player_data, 'Strength (BSQ & BP)', goal_data)
         if strength_chart:
             st.plotly_chart(strength_chart, use_container_width=True, config={'displayModeBar': False})
     
-    # PDF機能
+    # PDF function
     st.write("---")
-    st.write("### PDF機能")
+    st.write("### PDF Function")
     
-    # PDFライブラリの確認
+    # Check PDF libraries
     if PDF_AVAILABLE:
-        if st.button("📄 個人PDFレポート生成", type="primary", key="individual_pdf_report"):
+        if st.button("📄 Generate Individual PDF Report", type="primary", key="individual_pdf_report"):
             try:
-                with st.spinner('PDFレポートを生成中...'):
+                with st.spinner('Generating PDF report...'):
                     pdf_bytes = generate_pdf_report(
                         selected_name, 
                         player_data, 
@@ -2460,61 +2240,61 @@ def show_individual_analysis(df):
                     
                     if pdf_bytes:
                         clean_name = selected_name.replace(" ", "_").replace("　", "_")
-                        filename = f"{clean_name}_SR_SHIBUYA_レポート.pdf"
+                        filename = f"{clean_name}_SR_SHIBUYA_Report.pdf"
                         
                         download_link = create_download_link(pdf_bytes, filename)
                         st.markdown(download_link, unsafe_allow_html=True)
-                        st.success("PDFレポートが生成されました！")
+                        st.success("PDF report generated successfully!")
                     else:
-                        st.error("PDFレポートの生成に失敗しました。")
+                        st.error("Failed to generate PDF report.")
                         
             except Exception as e:
-                st.error(f"PDF生成エラー: {str(e)}")
+                st.error(f"PDF generation error: {str(e)}")
     else:
-        st.error("reportlabライブラリがインストールされていません")
+        st.error("reportlab library is not installed")
         st.code("pip install reportlab")
     
     st.write("---")
     
-    # 個別フィードバックコメント
-    st.markdown('<div class="section-header">個別フィードバック</div>', unsafe_allow_html=True)
+    # Individual feedback comments
+    st.markdown('<div class="section-header">Individual Feedback</div>', unsafe_allow_html=True)
     
-    # 3つのKey Indicatorsに基づくフィードバック生成
+    # Generate feedback based on 3 Key Indicators
     generated_feedback = generate_individual_feedback(player_data, category_avg, selected_name)
     
-    # セッションステートでフィードバックを管理
+    # Manage feedback with session state
     feedback_key = f"feedback_{selected_name}_{selected_category}"
     if feedback_key not in st.session_state:
         st.session_state[feedback_key] = generated_feedback
     
-    # 編集機能の表示
+    # Display edit function
     col1, col2 = st.columns([1, 4])
     with col1:
-        edit_mode = st.checkbox("編集モード", key=f"edit_{feedback_key}")
+        edit_mode = st.checkbox("Edit Mode", key=f"edit_{feedback_key}")
     with col2:
         if edit_mode:
-            if st.button("自動生成に戻す", key=f"reset_{feedback_key}"):
+            if st.button("Return to Auto-Generated", key=f"reset_{feedback_key}"):
                 st.session_state[feedback_key] = generated_feedback
                 st.rerun()
     
     if edit_mode:
-        # 編集可能なテキストエリア
+        # Editable text area
         edited_feedback = st.text_area(
-            "フィードバック内容を編集してください：",
+            "Edit feedback content:",
             value=st.session_state[feedback_key],
             height=200,
             key=f"textarea_{feedback_key}",
-            help="このテキストは自由に編集できます。変更は自動的に保存されます。"
+            help="This text can be freely edited. Changes are saved automatically."
         )
         
-        # 変更を保存
+        # Save changes
         if edited_feedback != st.session_state[feedback_key]:
             st.session_state[feedback_key] = edited_feedback
         
-        # 編集中の表示
-        st.info("編集モードが有効です。上記のテキストエリアで内容を変更できます。")
+        # Display during editing
+        st.info("Edit mode is enabled. You can modify the content in the text area above.")
     
-    # フィードバックコメントの表示
+    # Display feedback comments
     final_feedback = st.session_state[feedback_key]
     st.markdown(f"""
     <div style="
@@ -2534,14 +2314,14 @@ def show_individual_analysis(df):
     """, unsafe_allow_html=True)
 
 def generate_pdf_report(player_name, player_data, category_data, config):
-    """個人レポートのPDF生成（黄色テーマ）"""
+    """Generate PDF for individual report (yellow theme)"""
     if not PDF_AVAILABLE:
         return None
     
     try:
         buffer = io.BytesIO()
         
-        # 日本語フォント対応
+        # Japanese font support
         try:
             pdfmetrics.registerFont(UnicodeCIDFont('HeiseiKakuGo-W5'))
             japanese_font = 'HeiseiKakuGo-W5'
@@ -2550,7 +2330,7 @@ def generate_pdf_report(player_name, player_data, category_data, config):
             japanese_font = 'Helvetica'
             english_font = 'Helvetica'
         
-        # PDF文書の作成
+        # Create PDF document
         doc = SimpleDocTemplate(
             buffer, 
             pagesize=A4, 
@@ -2564,19 +2344,19 @@ def generate_pdf_report(player_name, player_data, category_data, config):
         )
         story = []
         
-        # 黄色系カラー定義
-        yellow_primary = colors.Color(0.9, 0.8, 0.0)  # 濃い黄色
-        yellow_secondary = colors.Color(1.0, 0.9, 0.3)  # 明るい黄色
-        yellow_light = colors.Color(1.0, 0.95, 0.7)  # 薄い黄色
+        # Yellow color definition
+        yellow_primary = colors.Color(0.9, 0.8, 0.0)  # Dark yellow
+        yellow_secondary = colors.Color(1.0, 0.9, 0.3)  # Bright yellow
+        yellow_light = colors.Color(1.0, 0.95, 0.7)  # Light yellow
         
-        # スタイル設定（黄色テーマ）
+        # Style settings (yellow theme)
         title_style = ParagraphStyle(
             'CustomTitle', 
             fontName=japanese_font,
             fontSize=13,
             spaceAfter=4,
             alignment=TA_CENTER, 
-            textColor=colors.Color(0.6, 0.5, 0.0)  # 濃い黄色
+            textColor=colors.Color(0.6, 0.5, 0.0)  # Dark yellow
         )
         
         heading_style = ParagraphStyle(
@@ -2598,12 +2378,12 @@ def generate_pdf_report(player_name, player_data, category_data, config):
             wordWrap='CJK'
         )
         
-        # ヘッダー部分
+        # Header section
         story.append(Paragraph("SR SHIBUYA", title_style))
         story.append(Paragraph("Physical Performance Report", title_style))
         story.append(Spacer(1, 15))
         
-        # 氏名とID
+        # Name and ID
         player_id = safe_get_value(player_data, 'ID', '')
         if player_id and str(player_id) != '' and str(player_id) != 'nan':
             player_info = f"Player Name: {player_name} (ID: {player_id})"
@@ -2612,7 +2392,7 @@ def generate_pdf_report(player_name, player_data, category_data, config):
         story.append(Paragraph(player_info, normal_style))
         story.append(Spacer(1, 6))
         
-        # Key Indicators用の3つの指標のスコア計算
+        # Calculate scores for 3 indicators for Key Indicators
         key_metrics = ['Sprint Momentum', 'BW*20m Mulch', 'LBM/m']
         section_scores = {}
         
@@ -2622,21 +2402,21 @@ def generate_pdf_report(player_name, player_data, category_data, config):
                 score = calculate_z_score(player_val, category_data, metric)
                 section_scores[metric] = score
             else:
-                section_scores[metric] = 3  # デフォルト値
+                section_scores[metric] = 3  # Default value
         
-        # 総合スコア計算
+        # Calculate overall score
         valid_scores = [s for s in section_scores.values() if s > 0]
         overall_score = round(np.mean(valid_scores)) if valid_scores else 3
         
-        # フィジカルスコア表示
+        # Display physical score
         story.append(Paragraph("Physical Score", heading_style))
         story.append(Spacer(1, 6))
         
-        # 横並びのスコア表（黄色テーマ）
+        # Horizontal score table (yellow theme)
         score_data = []
         score_row = []
         
-        # 英語表示名のマッピング
+        # English display name mapping
         metric_names = {
             'Sprint Momentum': 'Sprint Momentum',
             'BW*20m Mulch': 'BW x 20m Shuttle',
@@ -2666,7 +2446,7 @@ def generate_pdf_report(player_name, player_data, category_data, config):
         story.append(score_table)
         story.append(Spacer(1, 8))
         
-        # フィジカルバランス（三角形レーダーチャート）
+        # Physical balance (triangle radar chart)
         radar_chart = create_triangle_radar_chart_yellow(section_scores, overall_score)
         if radar_chart:
             chart_table = Table([[radar_chart]], colWidths=[5.7*cm])
@@ -2677,10 +2457,10 @@ def generate_pdf_report(player_name, player_data, category_data, config):
             story.append(chart_table)
             story.append(Spacer(1, -17))
         
-        # 測定データ
+        # Measurement data
         story.append(Paragraph("Measurement Data", heading_style))
         
-        # 主要な測定項目（英語名に変更）- データが存在しない項目は除外
+        # Major measurement items (changed to English names) - exclude items without data
         all_key_display_metrics = [
             ('Height', 'Height', 'cm'),
             ('Weight', 'Weight', 'kg'),
@@ -2698,10 +2478,10 @@ def generate_pdf_report(player_name, player_data, category_data, config):
             ('BW*20m Mulch', 'BW x 20m Shuttle', '')
         ]
         
-        # データが存在する項目のみを選択
+        # Select only items with data
         key_display_metrics = []
         for metric_key, metric_name, unit in all_key_display_metrics:
-            # プレイヤーデータまたはカテゴリーデータに存在するかチェック
+            # Check if exists in player data or category data
             player_has_data = metric_key in player_data.columns and safe_get_value(player_data, metric_key) is not None
             category_has_data = metric_key in category_data.columns and not category_data[metric_key].isna().all()
             
@@ -2710,7 +2490,7 @@ def generate_pdf_report(player_name, player_data, category_data, config):
         
         detail_data = [['Measurement Item', 'Latest Value', 'Previous Value', 'Change', 'Score', 'Target', 'Category Average']]
         
-        # 目標値の定義（アップロードされたExcelファイルの値）
+        # Target value definition (values from uploaded Excel file)
         target_values = {
             'LBM/m': 42,
             'BMI': 25,
@@ -2730,15 +2510,15 @@ def generate_pdf_report(player_name, player_data, category_data, config):
             player_val = safe_get_value(player_data, metric_key)
             previous_val = safe_get_previous_value(player_data, metric_key)
             
-            # 目標値を取得（アップロードされたファイルの値を使用）
+            # Get target value (use values from uploaded file)
             goal_val = target_values.get(metric_key)
             
-            # 変化を計算
+            # Calculate change
             change_display = ""
             if player_val is not None and previous_val is not None:
                 diff = player_val - previous_val
                 if metric_key == 'Fat%':
-                    # Fat%の場合は×100して表示
+                    # For Fat%, display as ×100
                     if diff > 0:
                         change_display = f"+{diff * 100:.2f}%"
                     elif diff < 0:
@@ -2746,7 +2526,7 @@ def generate_pdf_report(player_name, player_data, category_data, config):
                     else:
                         change_display = "0.00%"
                 else:
-                    # その他の項目は通常の差分表示
+                    # For other items, display normal difference
                     if diff > 0:
                         change_display = f"+{diff:.2f}"
                     elif diff < 0:
@@ -2756,14 +2536,14 @@ def generate_pdf_report(player_name, player_data, category_data, config):
             else:
                 change_display = "-"
             
-            # スコア計算
+            # Calculate score
             if player_val is not None:
                 score = calculate_z_score(player_val, category_data, metric_key)
                 score_display = str(score)
             else:
                 score_display = "N/A"
             
-            # カテゴリー平均
+            # Category average
             category_values = []
             for _, row in category_data.iterrows():
                 val = safe_get_value(pd.DataFrame([row]), metric_key)
@@ -2772,7 +2552,7 @@ def generate_pdf_report(player_name, player_data, category_data, config):
             
             category_avg = np.mean(category_values) if category_values else None
             
-            # Fat%の特別処理
+            # Special handling for Fat%
             if metric_key == 'Fat%':
                 if player_val is not None:
                     player_val_display = f"{player_val * 100:.1f}%"
@@ -2808,7 +2588,7 @@ def generate_pdf_report(player_name, player_data, category_data, config):
         
         detail_table = Table(detail_data, colWidths=[2.2*cm, 1.8*cm, 1.8*cm, 1.3*cm, 1.3*cm, 1.8*cm, 1.8*cm])
         
-        # テーブルスタイル（黄色テーマ）
+        # Table style (yellow theme)
         table_style = [
             ('BACKGROUND', (0, 0), (-1, 0), yellow_secondary),
             ('FONTNAME', (0, 0), (-1, -1), japanese_font),
@@ -2823,7 +2603,7 @@ def generate_pdf_report(player_name, player_data, category_data, config):
             ('ALIGN', (0, 1), (0, -1), 'LEFT'),
         ]
         
-        # 変化列の色付けのみ適用
+        # Apply coloring only to change column
         for i, (metric_key, metric_name, unit) in enumerate(key_display_metrics, 1):
             if metric_key not in player_data.columns:
                 continue
@@ -2831,7 +2611,7 @@ def generate_pdf_report(player_name, player_data, category_data, config):
             player_val = safe_get_value(player_data, metric_key)
             previous_val = safe_get_previous_value(player_data, metric_key)
             
-            # 変化列（4列目）の色付け
+            # Color change column (4th column)
             if player_val is not None and previous_val is not None:
                 try:
                     current_num = float(player_val)
@@ -2839,17 +2619,17 @@ def generate_pdf_report(player_name, player_data, category_data, config):
                     diff = current_num - previous_num
                     
                     if diff != 0:
-                        # Sprint、Agility、CODDは値が下がると良い（赤色で改善を示す）
+                        # For Sprint, Agility, CODD, lower values are better (show improvement in red)
                         if metric_key in ['20m Sprint(s)', 'Pro Agility', 'CODD']:
-                            if diff < 0:  # 値が下がった（改善）
+                            if diff < 0:  # Value decreased (improved)
                                 table_style.append(('TEXTCOLOR', (3, i), (3, i), colors.red))
-                            elif diff > 0:  # 値が上がった（悪化）
+                            elif diff > 0:  # Value increased (worsened)
                                 table_style.append(('TEXTCOLOR', (3, i), (3, i), colors.blue))
                         else:
-                            # その他の項目は値が上がると良い
-                            if diff > 0:  # 値が上がった（改善）
+                            # For other items, higher values are better
+                            if diff > 0:  # Value increased (improved)
                                 table_style.append(('TEXTCOLOR', (3, i), (3, i), colors.red))
-                            elif diff < 0:  # 値が下がった（悪化）
+                            elif diff < 0:  # Value decreased (worsened)
                                 table_style.append(('TEXTCOLOR', (3, i), (3, i), colors.blue))
                 except (ValueError, TypeError):
                     pass
@@ -2858,21 +2638,21 @@ def generate_pdf_report(player_name, player_data, category_data, config):
         story.append(detail_table)
         story.append(Spacer(1, 11))
         
-        # 個別フィードバックセクションを追加
-        story.append(Paragraph("個別フィードバック", heading_style))
+        # Add individual feedback section
+        story.append(Paragraph("Individual Feedback", heading_style))
         story.append(Spacer(1, 6))
         
-        # フィードバック内容を取得（セッションステートから、または自動生成）
+        # Get feedback content (from session state, or auto-generate)
         feedback_key = f"feedback_{player_name}_{player_data['カテゴリー'].iloc[0] if not player_data.empty else 'unknown'}"
         
-        # セッションステートからフィードバックを取得、存在しない場合は自動生成
+        # Get feedback from session state, auto-generate if doesn't exist
         if hasattr(st, 'session_state') and feedback_key in st.session_state:
             feedback_text = st.session_state[feedback_key]
         else:
-            # 自動生成フィードバックを使用
+            # Use auto-generated feedback
             feedback_text = generate_individual_feedback(player_data, category_data, player_name)
         
-        # フィードバック用のスタイル
+        # Style for feedback
         feedback_style = ParagraphStyle(
             'FeedbackStyle', 
             fontName=japanese_font, 
@@ -2885,18 +2665,18 @@ def generate_pdf_report(player_name, player_data, category_data, config):
             rightIndent=0.2*cm
         )
         
-        # フィードバックテキストを段落に分割して追加
+        # Split feedback text into paragraphs and add
         feedback_paragraphs = feedback_text.split('。')
         for paragraph in feedback_paragraphs:
             if paragraph.strip():
-                # 句点を追加して表示
+                # Add period for display
                 paragraph_text = paragraph.strip() + '。' if not paragraph.strip().endswith('。') else paragraph.strip()
                 story.append(Paragraph(paragraph_text, feedback_style))
         
         story.append(Spacer(1, 32))
         
-        # Key Indicators説明
-        story.append(Paragraph("Key Indicators説明", heading_style))
+        # Key Indicators explanation
+        story.append(Paragraph("Key Indicators Explanation", heading_style))
         story.append(Spacer(1, 6))
         
         item_style = ParagraphStyle(
@@ -2911,18 +2691,18 @@ def generate_pdf_report(player_name, player_data, category_data, config):
         )
         
         try:
-            story.append(Paragraph("Sprint momentum：コンタクトの強さを表します。体重×速度（20mスプリントのタイムから算出）", item_style))
-            story.append(Paragraph("　　　　　　　　　　U18卒団までに600以上が目標。", item_style))
+            story.append(Paragraph("Sprint momentum: Represents contact strength. Body weight × speed (calculated from 20m sprint time)", item_style))
+            story.append(Paragraph("　　　　　　　　　　Target of 600+ by U18 graduation.", item_style))
             story.append(Spacer(1, 3))
-            story.append(Paragraph("LBM/m：身長に対する除脂肪体重（脂肪以外の体重）の割合を示します。", item_style))
-            story.append(Paragraph("　　　　  U18卒団までに42以上が目標。", item_style))
+            story.append(Paragraph("LBM/m: Shows ratio of lean body mass (body weight minus fat) to height.", item_style))
+            story.append(Paragraph("　　　　  Target of 42+ by U18 graduation.", item_style))
             story.append(Spacer(1, 3))
-            story.append(Paragraph("BW*20m Mulch：体重×20mマルチシャトルランの値を示しています。体重が選手は20mマルチシャトルランが不利になるので、体重との積で評価します。", item_style))
-            story.append(Paragraph("　　　　　　　　　 U18卒団までに12000以上が目標。", item_style))
+            story.append(Paragraph("BW*20m Mulch: Shows value of body weight × 20m multi-shuttle run. Evaluated with body weight product as heavier players are disadvantaged in 20m multi-shuttle run.", item_style))
+            story.append(Paragraph("　　　　　　　　　 Target of 12000+ by U18 graduation.", item_style))
         except:
-            story.append(Paragraph("Key Indicators explanation (Japanese text)", item_style))
+            story.append(Paragraph("Key Indicators explanation (text content)", item_style))
         
-        # フッター
+        # Footer
         story.append(Spacer(1, 8))
         footer_style = ParagraphStyle(
             'Footer', 
@@ -2934,7 +2714,7 @@ def generate_pdf_report(player_name, player_data, category_data, config):
         
         story.append(Paragraph("©2025 SR SHIBUYA ALL RIGHTS RESERVED", footer_style))
         
-        # PDF生成
+        # Generate PDF
         doc.build(story)
         pdf_bytes = buffer.getvalue()
         buffer.close()
@@ -2942,29 +2722,29 @@ def generate_pdf_report(player_name, player_data, category_data, config):
         return pdf_bytes
         
     except Exception as e:
-        st.error(f"PDF生成エラー: {str(e)}")
+        st.error(f"PDF generation error: {str(e)}")
         return None
 
 def create_triangle_radar_chart_yellow(section_scores, overall_score):
-    """黄色テーマの三角形レーダーチャートを作成"""
+    """Create triangular radar chart with yellow theme"""
     try:
         from reportlab.graphics.shapes import Drawing, Polygon, String
         from reportlab.lib import colors as rl_colors
         import math
         
-        # チャートサイズ
+        # Chart size
         chart_width = 5.7*cm
         chart_height = 3.3*cm
         
         drawing = Drawing(chart_width, chart_height)
         
-        # 三角形の中心点と半径
+        # Triangle center point and radius
         center_x = chart_width / 2
         center_y = chart_height / 2 - 0.08*cm
         radius = 1.3*cm
         
-        # 三角形の頂点を計算（上向き三角形）
-        angles = [90, 210, 330]  # 度数
+        # Calculate triangle vertices (upward triangle)
+        angles = [90, 210, 330]  # Degrees
         triangle_points = []
         for angle in angles:
             rad = math.radians(angle)
@@ -2972,7 +2752,7 @@ def create_triangle_radar_chart_yellow(section_scores, overall_score):
             y = center_y + radius * math.sin(rad)
             triangle_points.extend([x, y])
         
-        # レーダーチャートの外枠（5段階、黄色系）
+        # Radar chart outer frame (5 levels, yellow tones)
         for level in range(1, 6):
             scale = level / 5.0
             scaled_points = []
@@ -2983,11 +2763,11 @@ def create_triangle_radar_chart_yellow(section_scores, overall_score):
                 scaled_y = center_y + (base_y - center_y) * scale
                 scaled_points.extend([scaled_x, scaled_y])
             
-            # 三角形の描画（黄色系）
+            # Draw triangle (yellow tones)
             if level < 5:
-                color = rl_colors.Color(0.9, 0.8, 0.0, alpha=0.2)  # 薄い黄色
+                color = rl_colors.Color(0.9, 0.8, 0.0, alpha=0.2)  # Light yellow
             else:
-                color = rl_colors.Color(0.7, 0.6, 0.0, alpha=0.4)  # 濃い黄色
+                color = rl_colors.Color(0.7, 0.6, 0.0, alpha=0.4)  # Dark yellow
             
             triangle = Polygon(scaled_points)
             triangle.fillColor = None
@@ -2995,12 +2775,12 @@ def create_triangle_radar_chart_yellow(section_scores, overall_score):
             triangle.strokeWidth = 1
             drawing.add(triangle)
         
-        # データポイントの計算
+        # Calculate data points
         metrics = ['Sprint Momentum', 'BW*20m Mulch', 'LBM/m']
         scores = [
-            section_scores.get('Sprint Momentum', 3),  # 上
-            section_scores.get('BW*20m Mulch', 3),    # 左下  
-            section_scores.get('LBM/m', 3)            # 右下
+            section_scores.get('Sprint Momentum', 3),  # Top
+            section_scores.get('BW*20m Mulch', 3),    # Bottom left  
+            section_scores.get('LBM/m', 3)            # Bottom right
         ]
         
         data_points = []
@@ -3014,16 +2794,16 @@ def create_triangle_radar_chart_yellow(section_scores, overall_score):
             else:
                 data_points.extend([center_x, center_y])
         
-        # データ三角形の描画（黄色系）
+        # Draw data triangle (yellow tones)
         if len(data_points) == 6:
             data_triangle = Polygon(data_points)
-            data_triangle.fillColor = rl_colors.Color(0.9, 0.8, 0.0, alpha=0.3)  # 黄色系
+            data_triangle.fillColor = rl_colors.Color(0.9, 0.8, 0.0, alpha=0.3)  # Yellow tones
             data_triangle.strokeColor = rl_colors.Color(0.7, 0.6, 0.0)
             data_triangle.strokeWidth = 2
             drawing.add(data_triangle)
         
-        # ラベルの追加
-        labels = ['Sprint Momentum', 'BW×20mシャトル', 'LBM/身長比', '総合スコア']
+        # Add labels
+        labels = ['Sprint Momentum', 'BW×20m Shuttle', 'LBM/Height', 'Overall Score']
         scores_for_labels = [
             section_scores.get('Sprint Momentum', 3),
             section_scores.get('BW*20m Mulch', 3),
@@ -3031,10 +2811,10 @@ def create_triangle_radar_chart_yellow(section_scores, overall_score):
             overall_score
         ]
         label_positions = [
-            (center_x, center_y + radius + 0.25*cm),      # 上
-            (center_x - radius - 0.5*cm, center_y - radius/2),  # 左下
-            (center_x + radius + 0.5*cm, center_y - radius/2),   # 右下
-            (center_x, center_y - radius + 0.37*cm)       # 下部
+            (center_x, center_y + radius + 0.25*cm),      # Top
+            (center_x - radius - 0.5*cm, center_y - radius/2),  # Bottom left
+            (center_x + radius + 0.5*cm, center_y - radius/2),   # Bottom right
+            (center_x, center_y - radius + 0.37*cm)       # Bottom
         ]
         
         for i, (label, (x, y)) in enumerate(zip(labels, label_positions)):
@@ -3047,7 +2827,7 @@ def create_triangle_radar_chart_yellow(section_scores, overall_score):
                 label_text.fontName = 'Helvetica'
             label_text.fontSize = 5
             label_text.textAnchor = 'middle'
-            label_text.fillColor = rl_colors.Color(0.4, 0.3, 0.0)  # 濃い黄色系
+            label_text.fillColor = rl_colors.Color(0.4, 0.3, 0.0)  # Dark yellow tones
             drawing.add(label_text)
         
         return drawing
@@ -3056,15 +2836,207 @@ def create_triangle_radar_chart_yellow(section_scores, overall_score):
         return None
 
 def create_download_link(pdf_bytes, filename):
-    """PDFダウンロードリンクを作成（黄色テーマ）"""
+    """Create PDF download link (yellow theme)"""
     b64_pdf = base64.b64encode(pdf_bytes).decode()
     href = f'<a href="data:application/pdf;base64,{b64_pdf}" download="{filename}" style="text-decoration: none;">'
     href += '<div style="background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%); '
     href += 'color: white; padding: 12px 24px; border-radius: 8px; text-align: center; '
     href += 'font-weight: bold; margin: 10px 0; display: inline-block; '
     href += 'box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);">'
-    href += '📄 PDFレポートをダウンロード</div></a>'
+    href += '📄 Download PDF Report</div></a>'
     return href
+
+def show_batch_pdf_generation(df):
+    """Batch PDF report generation screen"""
+    st.markdown('<div class="section-header">Batch PDF Report Generation</div>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%); 
+                padding: 1.5rem; border-radius: 12px; margin: 1rem 0;
+                border-left: 4px solid #4F46E5;">
+        <h4 style="color: #4F46E5; margin-top: 0;">📋 Batch PDF Report Generation</h4>
+        <p style="color: #1F2937; margin-bottom: 0;">
+            Select a category and measurement date to generate PDF reports for all applicable players at once.
+            Generated PDFs will be compiled into a single ZIP file for download.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Check PDF library
+    if not PDF_AVAILABLE:
+        st.error("❌ reportlab library is not installed")
+        st.code("pip install reportlab")
+        return
+    
+    # Category selection
+    available_categories = sorted(df[df['名前'] != 'Target']['カテゴリー'].dropna().unique())
+    
+    if not available_categories:
+        st.error("No category data found.")
+        return
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        selected_category = st.selectbox(
+            "📊 Select Category",
+            available_categories,
+            help="Select the player category for PDF report generation"
+        )
+    
+    # Get measurement dates for selected category
+    category_data = df[(df['カテゴリー'] == selected_category) & (df['名前'] != 'Target')]
+    
+    if category_data.empty:
+        st.warning(f"No data found for {selected_category}.")
+        return
+    
+    # Get list of measurement dates
+    if '測定日' in category_data.columns:
+        category_data['測定日'] = pd.to_datetime(category_data['測定日'], errors='coerce')
+        available_dates = sorted(category_data['測定日'].dropna().dt.strftime('%Y-%m-%d').unique(), reverse=True)
+    else:
+        st.error("Measurement date column not found.")
+        return
+    
+    if not available_dates:
+        st.warning(f"No measurement date data found for {selected_category}.")
+        return
+    
+    with col2:
+        selected_date = st.selectbox(
+            "📅 Select Measurement Date",
+            available_dates,
+            help="Select the measurement date for PDF report generation"
+        )
+    
+    # Display list of target players
+    target_players_data = df[
+        (df['カテゴリー'] == selected_category) & 
+        (df['名前'] != 'Target') &
+        (df['測定日'] == selected_date)
+    ]
+    
+    target_players = sorted(target_players_data['名前'].dropna().unique())
+    
+    st.markdown("---")
+    
+    # Display target players
+    st.markdown(f"### Target Players ({len(target_players)} players)")
+    
+    if target_players:
+        # Display player names in 3 columns
+        cols = st.columns(3)
+        for idx, player_name in enumerate(target_players):
+            with cols[idx % 3]:
+                st.markdown(f"• {player_name}")
+    else:
+        st.warning("No applicable players found.")
+        return
+    
+    st.markdown("---")
+    
+    # Generation options
+    st.markdown("### Generation Options")
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        include_feedback = st.checkbox(
+            "Include Individual Feedback",
+            value=True,
+            help="Include auto-generated feedback comments in each player's PDF"
+        )
+    
+    with col2:
+        zip_filename = st.text_input(
+            "ZIP Filename",
+            value=f"{selected_category}_{selected_date}_Reports.zip",
+            help="Specify the name of the ZIP file to download"
+        )
+    
+    st.markdown("---")
+    
+    # Generation button
+    if st.button("🚀 Generate Batch PDF Reports", type="primary", use_container_width=True):
+        try:
+            with st.spinner(f'Generating PDF reports for {len(target_players)} players...'):
+                # Progress bar
+                progress_bar = st.progress(0)
+                status_text = st.empty()
+                
+                # Create ZIP file
+                import zipfile
+                zip_buffer = io.BytesIO()
+                
+                with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+                    # Generate PDF for each player
+                    for idx, player_name in enumerate(target_players):
+                        status_text.text(f"Generating: {player_name} ({idx + 1}/{len(target_players)})")
+                        
+                        # Get player data
+                        player_data = df[
+                            (df['名前'] == player_name) & 
+                            (df['カテゴリー'] == selected_category)
+                        ]
+                        
+                        # Category average data
+                        category_avg = df[
+                            (df['カテゴリー'] == selected_category) & 
+                            (df['名前'] != 'Target')
+                        ]
+                        
+                        # Get configuration
+                        config = get_category_config(selected_category)
+                        
+                        # Generate PDF
+                        pdf_bytes = generate_pdf_report(
+                            player_name,
+                            player_data,
+                            category_avg,
+                            config
+                        )
+                        
+                        if pdf_bytes:
+                            # Create filename (Japanese character support)
+                            clean_name = player_name.replace(" ", "_").replace("　", "_")
+                            pdf_filename = f"{clean_name}_{selected_date}_Report.pdf"
+                            
+                            # Add to ZIP
+                            zip_file.writestr(pdf_filename, pdf_bytes)
+                        
+                        # Update progress bar
+                        progress_bar.progress((idx + 1) / len(target_players))
+                
+                progress_bar.empty()
+                status_text.empty()
+                
+                # Create ZIP file download link
+                zip_buffer.seek(0)
+                zip_bytes = zip_buffer.getvalue()
+                
+                b64_zip = base64.b64encode(zip_bytes).decode()
+                href = f'<a href="data:application/zip;base64,{b64_zip}" download="{zip_filename}" style="text-decoration: none;">'
+                href += '<div style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); '
+                href += 'color: white; padding: 16px 32px; border-radius: 12px; text-align: center; '
+                href += 'font-weight: bold; font-size: 1.1rem; margin: 20px 0; display: inline-block; '
+                href += 'box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);">'
+                href += f'📦 Download ZIP File ({len(target_players)} PDF Reports)</div></a>'
+                
+                st.markdown(href, unsafe_allow_html=True)
+                st.success(f"✅ Successfully generated PDF reports for {len(target_players)} players!")
+                
+                # Generated file details
+                with st.expander("📋 List of Generated Files"):
+                    for player_name in target_players:
+                        clean_name = player_name.replace(" ", "_").replace("　", "_")
+                        st.text(f"• {clean_name}_{selected_date}_Report.pdf")
+                
+        except Exception as e:
+            st.error(f"❌ PDF generation error: {str(e)}")
+            import traceback
+            st.code(traceback.format_exc())
+
+
 
 if __name__ == "__main__":
     main()
